@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seu Diagnóstico Patrimônio Atlântico · P1</title>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','META_PIXEL_ID');fbq('track','PageView');
+</script>
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","CLARITY_ID");
+</script>
+<style>
+:root{--g1-red:#C4170C;--g1-red-h:#A0120A;--g1-black:#1A1A1A;--g1-text:#333;--g1-muted:#717171;--g1-light:#F2F2F2;--g1-border:#E0E0E0;--g1-link:#0066B3;--g1-gold:#C9A14A;--g1-green:#1F6B3E}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--g1-text);background:#fff;line-height:1.55;font-size:16px}
+
+.g1-topbar{background:var(--g1-black);color:#fff;padding:6px 16px;font-size:11px;display:flex;justify-content:space-between;align-items:center}
+.g1-header-main{display:flex;align-items:center;padding:12px 24px;border-bottom:4px solid var(--g1-red);background:#fff}
+.g1-logo{font-family:'Arial Black',Arial,sans-serif;font-size:36px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;line-height:1}
+.g1-section-tag{margin-left:14px;padding-left:14px;border-left:1px solid var(--g1-border);font-size:15px;font-weight:700;color:var(--g1-black);line-height:1;text-transform:uppercase;letter-spacing:.5px}
+.g1-breadcrumb{background:var(--g1-light);padding:8px 24px;font-size:12px;border-bottom:1px solid var(--g1-border);color:var(--g1-muted)}
+.g1-breadcrumb a{color:var(--g1-link);text-decoration:none}
+
+.urgency-bar{background:var(--g1-red);color:#fff;padding:11px 24px;text-align:center;font-size:13px;letter-spacing:.5px;font-weight:600}
+.urgency-bar strong{font-weight:900}
+
+.sticky-mobile{position:fixed;bottom:0;left:0;right:0;background:var(--g1-red);padding:11px 16px;display:none;z-index:200;box-shadow:0 -4px 14px rgba(0,0,0,.18)}
+.sticky-mobile a{display:block;background:#fff;color:var(--g1-red);text-align:center;padding:13px;font-size:13px;font-weight:900;letter-spacing:1px;text-transform:uppercase;text-decoration:none}
+@media(max-width:768px){.sticky-mobile{display:block}body{padding-bottom:75px}}
+
+.hero{background:#fff;border-bottom:1px solid var(--g1-border);padding:28px 24px 22px;text-align:center}
+.hero .badge{display:inline-block;padding:5px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:900;margin-bottom:14px;color:#fff}
+.hero .badge.tier1{background:var(--g1-green)}
+.hero .badge.tier2{background:var(--g1-gold);color:var(--g1-black)}
+.hero .badge.tier3{background:var(--g1-black)}
+.hero h1{font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:1.25;color:var(--g1-black);max-width:680px;margin:0 auto 10px;font-weight:900;letter-spacing:-.3px}
+.hero h1 .name{color:var(--g1-red)}
+.hero .sub{font-size:16px;color:var(--g1-text);max-width:560px;margin:0 auto;line-height:1.5}
+
+.hero-img-wrap{max-width:1100px;margin:18px auto 0;padding:0 24px}
+.hero-img{width:100%;height:auto;display:block}
+
+.score-bar{max-width:520px;margin:18px auto 0;background:var(--g1-light);padding:14px 20px;text-align:left}
+.score-bar .sl{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;color:var(--g1-muted);text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:8px}
+.score-bar .sn{font-size:14px;font-weight:900;color:var(--g1-black)}
+.score-track{height:8px;background:var(--g1-border);overflow:hidden}
+.score-fill{height:100%;transition:width 1.2s ease}
+.score-fill.tier1{background:linear-gradient(90deg,var(--g1-red),var(--g1-green))}
+.score-fill.tier2{background:linear-gradient(90deg,var(--g1-red),var(--g1-gold))}
+.score-fill.tier3{background:var(--g1-red)}
+
+.container{max-width:760px;margin:0 auto;padding:28px 24px}
+
+.section{background:#fff;border:1px solid var(--g1-border);padding:24px;margin-bottom:20px}
+.section .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g1-red);font-weight:900;margin-bottom:10px}
+.section h2{font-family:Arial,Helvetica,sans-serif;font-size:22px;color:var(--g1-black);margin-bottom:12px;line-height:1.3;font-weight:900;letter-spacing:-.2px}
+.section p{margin-bottom:12px;color:var(--g1-text);font-size:15px}
+.section p strong{color:var(--g1-black);font-weight:700}
+
+.preview-box{background:var(--g1-black);color:#fff;padding:24px;margin-bottom:20px;border-left:4px solid var(--g1-red)}
+.preview-box .label{color:var(--g1-red);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:900;margin-bottom:10px}
+.preview-box h2{color:#fff;font-size:21px;line-height:1.3;margin-bottom:12px;font-weight:900}
+.preview-box p{color:#D8D8D8;margin-bottom:14px;font-size:14px}
+.fact-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dotted rgba(255,255,255,.18);font-size:14px;gap:14px}
+.fact-row:last-child{border-bottom:none}
+.fact-row .fl{color:#B0B0B0;flex:1}
+.fact-row .fv{font-weight:900;color:#fff;text-align:right;white-space:nowrap}
+
+.cta-primary{display:block;background:var(--g1-red);color:#fff;font-weight:900;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:18px 24px;border:none;text-decoration:none;text-align:center;cursor:pointer;width:100%;margin-bottom:10px;transition:background .15s}
+.cta-primary:hover{background:var(--g1-red-h)}
+.cta-secondary{display:block;background:transparent;color:var(--g1-black);font-weight:900;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px 24px;border:2px solid var(--g1-black);text-decoration:none;text-align:center;cursor:pointer;width:100%;transition:all .15s}
+.cta-secondary:hover{background:var(--g1-black);color:#fff}
+.cta-whats{background:#25D366;border-color:#25D366;color:#fff}
+.cta-whats:hover{background:#1FB855;border-color:#1FB855;color:#fff}
+
+.scarcity{background:#FFF8F7;border:1px solid #F5C9C5;padding:13px 18px;margin:14px 0;font-size:13px;color:var(--g1-text);text-align:center;border-left:4px solid var(--g1-red)}
+.scarcity strong{color:var(--g1-red)}
+
+.cal-placeholder{background:var(--g1-light);border:1px dashed var(--g1-border);padding:30px 24px;text-align:center;color:var(--g1-muted);font-size:13px;margin-top:14px}
+
+/* PROPERTY GRID — the BIG new section */
+.props-section{background:#fff;border-top:4px solid var(--g1-red);padding:28px 0;margin-bottom:20px}
+.props-section .ps-header{padding:0 24px;margin-bottom:18px}
+.props-section .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g1-red);font-weight:900;margin-bottom:8px}
+.props-section h2{font-family:Arial,Helvetica,sans-serif;font-size:24px;color:var(--g1-black);line-height:1.3;font-weight:900;letter-spacing:-.2px;margin-bottom:8px}
+.props-section .ps-sub{font-size:14px;color:var(--g1-muted);line-height:1.5}
+.props-section .ps-stats{display:flex;gap:18px;margin-top:14px;font-size:12px;color:var(--g1-muted);flex-wrap:wrap}
+.props-section .ps-stats span{display:inline-flex;align-items:center;gap:6px}
+.props-section .ps-stats strong{color:var(--g1-black);font-weight:900;font-size:13px}
+
+.props-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 24px}
+.prop-card{background:#fff;border:1px solid var(--g1-border);overflow:hidden;transition:all .2s ease;display:flex;flex-direction:column}
+.prop-card:hover{border-color:var(--g1-red);box-shadow:-3px 3px 0 var(--g1-red)}
+.prop-card .img-wrap{position:relative;width:100%;height:180px;overflow:hidden;background:var(--g1-light)}
+.prop-card img{width:100%;height:100%;object-fit:cover;display:block}
+.prop-card .badge-strip{position:absolute;top:8px;left:8px;display:flex;gap:6px;flex-wrap:wrap}
+.prop-card .b-badge{background:var(--g1-red);color:#fff;font-size:9px;padding:3px 7px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
+.prop-card .b-badge.off{background:var(--g1-black)}
+.prop-card .b-badge.verif{background:var(--g1-green)}
+.prop-card .p-meta{padding:14px;display:flex;flex-direction:column;flex:1}
+.prop-card .p-bldg{font-size:11px;color:var(--g1-red);font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.prop-card .p-title{font-size:15px;font-weight:900;color:var(--g1-black);line-height:1.3;margin-bottom:6px}
+.prop-card .p-loc{font-size:12px;color:var(--g1-muted);margin-bottom:10px}
+.prop-card .p-specs{display:flex;gap:14px;margin-bottom:10px;font-size:12px;color:var(--g1-text);border-top:1px dotted var(--g1-border);border-bottom:1px dotted var(--g1-border);padding:8px 0}
+.prop-card .p-specs span{display:flex;flex-direction:column}
+.prop-card .p-specs strong{font-size:14px;font-weight:900;color:var(--g1-black)}
+.prop-card .p-specs em{font-size:10px;color:var(--g1-muted);font-style:normal;text-transform:uppercase;letter-spacing:.5px}
+.prop-card .p-price{font-size:20px;font-weight:900;color:var(--g1-black);margin-bottom:4px;letter-spacing:-.5px}
+.prop-card .p-price-sub{font-size:11px;color:var(--g1-muted);margin-bottom:12px}
+.prop-card .p-action{margin-top:auto}
+.prop-card .p-action a{display:block;background:var(--g1-light);color:var(--g1-black);font-size:12px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;padding:11px;text-align:center;text-decoration:none;transition:all .15s}
+.prop-card .p-action a:hover{background:var(--g1-red);color:#fff}
+
+.props-footer{padding:16px 24px 0;font-size:12px;color:var(--g1-muted);text-align:center;line-height:1.5;border-top:1px solid var(--g1-border);margin:18px 24px 0}
+.props-footer a{color:var(--g1-link);text-decoration:none}
+
+/* BUILDING GRID (smaller cards) */
+.bldg-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:16px 0 6px}
+.bldg-card{background:#fff;border:1px solid var(--g1-border);overflow:hidden}
+.bldg-card img{width:100%;height:130px;object-fit:cover;display:block;background:var(--g1-light)}
+.bldg-card .bm{padding:11px 13px}
+.bldg-card .bn{font-weight:900;color:var(--g1-black);font-size:13px;margin-bottom:3px;line-height:1.3}
+.bldg-card .bz{font-size:10px;color:var(--g1-red);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:900}
+.bldg-card .bp{font-size:12px;color:var(--g1-text);font-weight:700}
+
+/* BONUSES */
+.bonuses-master{background:#FFFCF2;border:2px solid var(--g1-gold);padding:26px;margin-bottom:20px;position:relative}
+.bonuses-master::before{content:"✦ EXCLUSIVO";position:absolute;top:-11px;left:20px;background:var(--g1-gold);color:#fff;padding:4px 12px;font-size:11px;font-weight:900;letter-spacing:1px}
+.bonuses-master h2{font-size:22px;color:var(--g1-black);text-align:center;margin-bottom:8px;font-weight:900}
+.bonuses-master .bm-sub{text-align:center;font-size:14px;color:var(--g1-muted);margin-bottom:20px;line-height:1.5}
+.bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.bonus-card{background:#fff;border:1px solid var(--g1-border);overflow:hidden;display:flex;flex-direction:column}
+.bonus-card img{width:100%;height:150px;object-fit:cover;display:block;background:var(--g1-light)}
+.bonus-card .bcc{padding:16px;flex:1;display:flex;flex-direction:column}
+.bonus-card .bcl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--g1-red);font-weight:900;margin-bottom:6px}
+.bonus-card .bct{font-size:17px;font-weight:900;color:var(--g1-black);margin-bottom:10px;line-height:1.3}
+.bonus-card .bcd{font-size:13px;color:var(--g1-text);line-height:1.5;margin-bottom:12px;flex:1}
+.bonus-card ul{list-style:none;padding:0;margin:0 0 12px;font-size:12px;color:var(--g1-text);line-height:1.6}
+.bonus-card li{padding-left:17px;position:relative;margin-bottom:3px}
+.bonus-card li::before{content:"✓";position:absolute;left:0;color:var(--g1-red);font-weight:900}
+.bonus-card .bcv{margin-top:auto;border-top:1px dotted var(--g1-border);padding-top:11px;font-size:12px;color:var(--g1-muted)}
+.bonus-card .bcv strong{display:block;color:var(--g1-green);font-size:13px;margin-top:2px;font-weight:900}
+
+.value-stack{background:var(--g1-black);color:#fff;padding:18px;text-align:center;margin-top:6px}
+.value-stack .vsl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g1-red);font-weight:900;margin-bottom:6px}
+.value-stack .vsv{font-size:22px;font-weight:900;line-height:1.3;margin-bottom:4px}
+.value-stack .vsv .strike{text-decoration:line-through;opacity:.4;font-size:17px;margin-right:8px}
+.value-stack .vsx{font-size:12px;color:#C5C5C5}
+
+/* TESTIMONIALS */
+.testimonial{background:var(--g1-light);padding:20px;margin-bottom:12px;font-style:italic;font-size:15px;line-height:1.55;color:var(--g1-text);border-left:4px solid var(--g1-red)}
+.testimonial cite{display:block;margin-top:10px;font-size:11px;font-style:normal;color:var(--g1-muted);letter-spacing:1px;text-transform:uppercase;font-weight:900}
+
+.g1-footer{background:var(--g1-black);color:#fff;padding:24px;text-align:center;font-size:12px;margin-top:24px}
+.g1-footer .brand{font-family:'Arial Black',Arial,sans-serif;font-size:22px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;margin-bottom:6px}
+.g1-footer a{color:#FFCFCB;text-decoration:none}
+
+.legal-disc{font-size:11px;color:var(--g1-muted);padding:13px;background:var(--g1-light);margin-top:14px;line-height:1.5;border-left:3px solid var(--g1-border)}
+
+@media(max-width:680px){
+.hero h1{font-size:22px}.section h2{font-size:18px}.container{padding:22px 14px}
+.preview-box{padding:22px}.bonuses-master{padding:22px 16px}.bonus-grid{grid-template-columns:1fr;gap:14px}
+.bldg-grid{grid-template-columns:1fr;gap:12px}.bldg-card img{height:160px}
+.props-grid{grid-template-columns:1fr;gap:12px;padding:0 16px}
+.props-section .ps-header{padding:0 16px}.props-footer{margin:18px 16px 0;padding:14px 0 0}
+.value-stack .vsv{font-size:18px}.hero-img-wrap{padding:0 14px}
+.g1-topbar{padding:5px 12px;font-size:10px}.g1-header-main{padding:10px 14px}.g1-logo{font-size:28px}.g1-section-tag{font-size:12px;margin-left:10px;padding-left:10px}
+.g1-breadcrumb{padding:7px 14px;font-size:11px}
+}
+
+.g1-team{background:var(--g1-light);border-top:4px solid var(--g1-red);padding:24px;margin:0 0 20px;font-family:Arial,Helvetica,sans-serif}
+.g1-team-header{margin-bottom:18px}
+.g1-team-header .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g1-red);font-weight:900;margin-bottom:8px}
+.g1-team-header h3{font-size:22px;font-weight:900;color:var(--g1-black);line-height:1.3;margin-bottom:8px;letter-spacing:-.2px}
+.g1-team-header p{font-size:14px;color:var(--g1-text);line-height:1.55;margin-bottom:0}
+.g1-team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.g1-team-card{background:#fff;padding:16px;border-top:3px solid var(--g1-red);display:flex;gap:14px;align-items:flex-start}
+.g1-team-photo{flex-shrink:0;width:60px;height:60px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;font-family:'Arial Black',Arial,sans-serif;letter-spacing:-.5px}
+.g1-team-photo.bs-bg{background:#0066B3}
+.g1-team-photo.ac-bg{background:var(--g1-red)}
+.g1-team-photo.dc-bg{background:var(--g1-green)}
+.g1-team-photo.na-bg{background:var(--g1-black)}
+.g1-team-meta{flex:1;min-width:0}
+.g1-team-name{font-size:14px;font-weight:900;color:var(--g1-black);margin-bottom:2px;line-height:1.2}
+.g1-team-role{font-size:10px;color:var(--g1-red);text-transform:uppercase;letter-spacing:.5px;font-weight:900;margin-bottom:8px;line-height:1.3}
+.g1-team-bio{font-size:12px;color:var(--g1-text);line-height:1.5}
+@media(max-width:600px){.g1-team-grid{grid-template-columns:1fr}.g1-team-card{padding:14px}.g1-team-header h3{font-size:19px}}
+
+/* TEAM PHOTOS — sized down + mobile-safe */
+.g1-team-photo-big{width:90px !important;height:90px !important;border-width:2px !important}
+.g1-team-card-big{padding:18px 16px !important;gap:10px !important}
+.g1-team-card-big .g1-team-name{font-size:15px !important;margin-top:8px}
+.g1-team-card-big .g1-team-role{font-size:10px !important}
+.g1-team-card-big .g1-team-bio{font-size:12.5px !important;text-align:left;line-height:1.5}
+@media(max-width:600px){
+  .g1-team-photo-big{width:80px !important;height:80px !important}
+  .g1-team-card-big{padding:16px 14px !important}
+  .g1-team-card-big .g1-team-bio{font-size:12px !important}
+  .g1-team-grid-2{grid-template-columns:1fr !important}
+}
+
+/* GLOBAL MOBILE POLISH */
+img{max-width:100%;height:auto}
+@media(max-width:600px){
+  body{font-size:15px}
+  h1,h2,h3{word-wrap:break-word;hyphens:auto}
+  .g1-cta-block{padding:24px 16px !important}
+  .g1-cta-block h3{font-size:22px !important;line-height:1.25}
+  .g1-cta-block .cta-btn{font-size:14px !important;padding:16px 22px !important;display:block;width:100%}
+  .g1-mid-cta{padding:22px 16px !important}
+  .g1-mid-cta h4{font-size:17px !important}
+  .g1-mid-cta a{display:block;width:100%;padding:14px !important;font-size:13px !important}
+  .g1-cta-inline{flex-direction:column;align-items:stretch}
+  .g1-cta-inline a{width:100% !important;text-align:center}
+  /* Sticky bar mobile */
+  .g1-sticky-bar{padding:9px 12px !important;font-size:11px !important;flex-wrap:wrap;gap:8px !important}
+  .g1-sticky-bar .stxt{font-size:11px !important;text-align:center;width:100%}
+  .g1-sticky-bar .sbtn{font-size:11px !important;padding:7px 14px !important}
+  /* Floating WhatsApp adjusted on mobile */
+  .wa-float{bottom:10px !important;right:10px !important;width:50px !important;height:50px !important;font-size:24px !important}
+  .wa-float .wa-pulse{width:50px !important;height:50px !important}
+  /* Body padding so sticky CTAs don't cover content */
+  body{padding-bottom:80px}
+  /* Tables responsive */
+  .compare-table,.cmp{font-size:12px}
+  .compare-table th,.compare-table td,.cmp th,.cmp td{padding:8px 6px}
+  /* Figcaptions readable */
+  .g1-figure figcaption{font-size:11px;padding:8px 10px 12px;line-height:1.4}
+  /* Container padding tighter */
+  .g1-container{padding:20px 14px !important}
+  /* Header more compact */
+  .g1-header-main{padding:8px 12px !important}
+  .g1-logo{font-size:26px !important}
+  .g1-section-tag{font-size:11px !important;margin-left:8px !important;padding-left:8px !important}
+  .g1-header-right{display:none !important}
+  /* Breadcrumb mobile */
+  .g1-breadcrumb{padding:6px 12px !important;font-size:10px !important;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  /* Topbar mobile */
+  .g1-topbar{padding:5px 10px !important;font-size:10px !important}
+  /* Kicker mobile */
+  .g1-kicker{font-size:10px !important;padding:3px 9px !important;margin-bottom:10px !important}
+  /* Headline mobile (advertorials) */
+  h1.g1-headline{font-size:23px !important;line-height:1.2 !important}
+  .g1-subhead{font-size:15px !important;line-height:1.45 !important}
+  .g1-body p.lead{font-size:16px !important;line-height:1.5 !important}
+  .g1-body h2{font-size:18px !important;line-height:1.3 !important}
+  .g1-body p{font-size:15px !important;line-height:1.6 !important}
+  /* Pullquote mobile */
+  .g1-pullquote{font-size:17px !important;padding:12px 0 12px 14px !important;line-height:1.35 !important}
+  /* Databox mobile */
+  .g1-databox{padding:16px !important;margin:20px 0 !important}
+  .g1-databox .row{flex-direction:column;gap:4px !important;padding:8px 0 !important;align-items:flex-start !important}
+  .g1-databox .row .desc{text-align:left !important;max-width:100% !important;font-size:12px !important}
+  .g1-databox .row .num{font-size:18px !important}
+  /* Case box mobile */
+  .g1-case{padding:18px 16px !important}
+  .g1-case h3{font-size:16px !important}
+  .g1-case .quote{font-size:14px !important;padding-left:12px !important}
+  .g1-case p{font-size:13px !important}
+  /* Bonus tease mobile */
+  .g1-bonus{padding:16px !important}
+  .g1-bonus h4{font-size:15px !important}
+  .g1-bonus ul{font-size:13px !important}
+  /* Disclosure mobile */
+  .g1-disclosure{padding:12px 14px !important;font-size:11px !important}
+  /* Related mobile */
+  .g1-related-grid{grid-template-columns:1fr 1fr !important;gap:8px !important}
+  .g1-related-card img{height:80px !important}
+  .g1-related-card .t{font-size:12px !important;line-height:1.3 !important}
+  .g1-related-card .k{font-size:9px !important}
+  /* Building grid (advertorial 2) mobile */
+  .bldg-grid{grid-template-columns:1fr !important;gap:10px !important}
+  .bldg-card img{height:160px !important}
+  /* Footer mobile */
+  .g1-footer{padding:18px 14px !important;font-size:11px !important}
+  .g1-footer .brand{font-size:18px !important}
+  .g1-footer .partner{font-size:10px !important}
+}
+
+</style>
+</head>
+<body>
+
+<div class="g1-topbar"><div>Edição Digital — <span class="js-date-weekday">Hoje</span></div><div></div></div>
+<div class="g1-header-main"><div class="g1-logo">P1</div><div class="g1-section-tag">Resultado do Diagnóstico</div></div>
+<div class="g1-breadcrumb"><a href="#">P1</a> &rsaquo; <a href="#">Patrimônio</a> &rsaquo; Diagnóstico Personalizado</div>
+
+<div class="urgency-bar" id="urgencyBar"></div>
+
+<div class="hero">
+  <div class="badge" id="tierBadge"></div>
+  <h1 id="heroHeadline"></h1>
+  <p class="sub" id="heroSub"></p>
+  <div class="score-bar">
+    <div class="sl"><span>Heritage Score</span><span class="sn" id="scoreText"></span></div>
+    <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+  </div>
+</div>
+
+<!-- ANDRÉ VIDEO — moved from quiz intro to here for higher conversion -->
+<div style="background:#fff;border-bottom:1px solid var(--g1-border);padding:30px 24px 36px">
+  <div style="max-width:780px;margin:0 auto">
+    <div style="display:inline-block;background:#FF0000;color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:12px">▶ Vídeo · 2 min · ATIVE O SOM PRA OUVIR ANDRÉ</div>
+    <h2 style="font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1.25;color:var(--g1-black);margin-bottom:8px;font-weight:900;letter-spacing:-.2px">Antes da reunião, <span style="color:var(--g1-red)">conheça em 2 minutos quem vai te atender</span></h2>
+    <p style="font-size:14px;color:var(--g1-muted);margin-bottom:16px;line-height:1.5">André Cunha Lima, Realtor® Miami-Dade · seu corretor parceiro · explica em 2 minutos como funciona o processo de compra de imóvel em Miami (escritura digital, em português, sem viagem).</p>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid var(--g1-border)">
+      <iframe src="https://www.youtube.com/embed/ONVZxxBasjk?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1" title="André Cunha Lima — Como comprar imóvel em Miami" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onload="if(window.fbq)fbq('trackCustom','VideoLoaded',{location:'result_page'});if(window.clarity)clarity('event','video_loaded_result')"></iframe>
+    </div>
+    <div style="text-align:center;margin-top:14px;font-size:13px;color:#717171">
+      Vídeo não carregou? <a href="https://www.youtube.com/watch?v=ONVZxxBasjk" target="_blank" style="color:#C4170C;font-weight:700;text-decoration:underline" onclick="if(window.fbq)fbq('trackCustom','VideoFallbackClick')">Assistir direto no YouTube →</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <!-- PREVIEW DOSSIÊ -->
+  <div class="preview-box">
+    <div class="label">Prévia do seu dossiê personalizado · PDF</div>
+    <h2 id="dossierTitle"></h2>
+    <p id="dossierIntro"></p>
+    <div id="dossierFacts"></div>
+  </div>
+
+  <!-- CTA PRINCIPAL -->
+  <div class="section" id="ctaSection" style="border-top:4px solid var(--g1-red)">
+    <div class="label" id="ctaLabel"></div>
+    <h2 id="ctaTitle"></h2>
+    <p id="ctaIntro"></p>
+    <div class="scarcity" id="scarcityBox"></div>
+    <div id="ctaButtons"></div>
+    <div id="calendlyWrap" style="display:none;">
+      <div class="cal-placeholder">
+        Após clicar em <strong>Agendar minha reunião</strong>, você será direcionado para a agenda do corretor parceiro.
+        <br><small>(Em produção, widget Calendly embedded — placeholder <code>CALENDLY_URL</code>)</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- BÔNUS -->
+  <div class="bonuses-master">
+    <h2>Bônus incluídos no seu pacote</h2>
+    <p class="bm-sub">Além do diagnóstico patrimonial e da reunião com o corretor parceiro, você recebe dois bônus que cuidam de duas perguntas que todo empresário brasileiro faz na sequência: <em>"e os filhos?"</em> e <em>"e se eu pudesse gerar mais renda em dólar além do aluguel?"</em></p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <img src="img/bonus_education.png" alt="Estudantes em escola internacional bilíngue Miami">
+        <div class="bcc">
+          <div class="bcl">Bônus 1 · Incluído</div>
+          <div class="bct">Concierge Educacional Heritage</div>
+          <div class="bcd">Assessoria completa pra colocar os filhos em uma das 4 escolas internacionais bilíngues onde estão os filhos da comunidade brasileira de Miami.</div>
+          <ul>
+            <li>Avaliação do perfil vs critérios das 4 escolas</li>
+            <li>Cushman · Carrollton · Beacon · ASD</li>
+            <li>Calendário de aplicação personalizado</li>
+            <li>Conexão com pais brasileiros atuais (referências)</li>
+            <li>Suporte com transcripts e documentação</li>
+          </ul>
+          <div class="bcv">Valor referência consultoria especializada:<strong>~US$ 8.000</strong></div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="img/bonus_business.png" alt="Empresária brasileira em escritório Miami">
+        <div class="bcc">
+          <div class="bcl">Bônus 2 · Incluído</div>
+          <div class="bct">Mapa de Negócios USA Heritage</div>
+          <div class="bcd">Análise personalizada de 3 oportunidades de aquisição ou participação em negócio operacional nos EUA — fluxo de caixa em dólar além do aluguel.</div>
+          <ul>
+            <li>Diagnóstico de fit (tempo, expertise, risco)</li>
+            <li>Franquias americanas em expansão Flórida</li>
+            <li>Aquisição small business via SBA / E-2</li>
+            <li>Sindication real estate (multifamily Sun Belt)</li>
+            <li>Participação em scaleups com operação USA</li>
+          </ul>
+          <div class="bcv">Valor referência consultoria M&A:<strong>~US$ 10.000</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="value-stack">
+      <div class="vsl">Valor total do pacote completo</div>
+      <div class="vsv"><span class="strike">US$ 18.000</span>US$ 0 hoje</div>
+      <div class="vsx">Sem custo adicional ao closing · Apenas para clientes Heritage Signal</div>
+    </div>
+  </div>
+
+  <!-- ============ PROPERTY GRID (NEW) ============ -->
+  <div class="props-section" id="propsSection">
+    <div class="ps-header">
+      <div class="label">Imóveis disponíveis · Estoque atual</div>
+      <h2 id="propsTitle">Imóveis Miami compatíveis com seu perfil — disponíveis esta semana</h2>
+      <p class="ps-sub" id="propsSub">Curadoria atualizada de unidades em estoque ativo, filtradas pela sua motivação principal e faixa de orçamento.</p>
+      <div class="ps-stats">
+        <span>Última atualização: <strong>maio/2026</strong></span>
+        <span>Fonte: <strong>miamiresidence.com + MLS</strong></span>
+        <span><strong id="propsCount">12</strong> unidades neste perfil</span>
+      </div>
+    </div>
+    <div class="props-grid" id="propsGrid"></div>
+    <div class="props-footer">
+      <div style="margin-bottom:14px"><a href="imoveis.html" style="display:inline-block;background:var(--g1-red);color:#fff;padding:13px 26px;text-decoration:none;font-weight:900;letter-spacing:1px;text-transform:uppercase;font-size:13px">Ver portal completo · 30+ imóveis com filtros →</a></div>
+      Dados representativos do estoque ativo em parceria informativa com <a href="https://www.miamiresidence.com" target="_blank">miamiresidence.com</a>. Preços, disponibilidade e regras de short-term rental sujeitos a mudança. Para listagens atualizadas e acesso a unidades <strong>off-market</strong>, fale com o corretor parceiro pelo botão acima.
+    </div>
+  </div>
+
+  
+  <!-- EXTRA WHATSAPP CTA -->
+  <div style="background:#25D366;color:#fff;padding:24px;text-align:center;margin-bottom:20px;border-radius:0">
+    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:900;opacity:.9;margin-bottom:8px">Atalho</div>
+    <h3 style="font-size:21px;font-weight:900;line-height:1.3;margin-bottom:8px;color:#fff">Viu algum imóvel interessante? Fale agora com André e Daniella</h3>
+    <p style="font-size:14px;opacity:.92;margin-bottom:16px;color:#fff">Resposta em até 1h em horário comercial · Em português</p>
+    <a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Vi%20os%20im%C3%B3veis%20do%20diagn%C3%B3stico%20e%20gostaria%20de%20conversar." target="_blank" style="display:inline-block;background:#fff;color:#1FB855;padding:14px 28px;font-weight:900;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-size:14px" onclick="if(window.fbq)fbq('trackCustom','WAResultMidClick');">💬 Falar pelo WhatsApp agora →</a>
+  </div>
+
+  <!-- BUILDING SUGGESTIONS -->
+  <div class="section" id="buildingsSection">
+    <div class="label">Edifícios alinhados ao seu perfil</div>
+    <h2>3 edifícios em destaque pra você</h2>
+    <p>Com base no seu Heritage Score e motivação principal, sugerimos esses prédios pra análise prioritária na reunião com o corretor.</p>
+    <div class="bldg-grid" id="bldgList"></div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section">
+    <div class="label">Brasileiros que já passaram pelo processo</div>
+    <h2>O que dizem empresários que fizeram o diagnóstico</h2>
+    <div class="testimonial">"Eu já tinha pesquisado Miami por 8 meses sozinho. Em 30 minutos com o corretor parceiro do Heritage Signal eu entendi mais sobre estruturação tributária e edifícios certos do que com 3 contadores brasileiros juntos. Fechei em 90 dias um condo no St Regis Bal Harbour. E o concierge educacional já marcou as visitas das duas escolas pros meus filhos."<cite>— Roberto M., 54, empresário de logística, SP</cite></div>
+    <div class="testimonial">"O relatório que recebi mostrou que eu estava prestes a comprar no edifício errado. A diferença de ticket era pequena, mas a regra de short-term rental do prédio proibia aluguel temporada. Teria perdido US$ 60K/ano em receita. Esses 30 minutos pagaram a próxima década."<cite>— Ana C., 48, médica anestesista, BH</cite></div>
+    <div class="testimonial">"Eu queria pertencimento mais do que ROI. O corretor me apontou exatamente os 2 edifícios onde estão os founders de fintech brasileiros. Em 4 meses estou no apartamento e em rede com 11 outros founders."<cite>— Marcelo T., 46, founder ex-SaaS, SP</cite></div>
+  </div>
+
+  <!-- TEAM SECTION -->
+  
+  <!-- WHATSAPP AFTER TESTIMONIALS -->
+  <div style="background:#fff;border:2px solid #25D366;padding:22px;text-align:center;margin-bottom:20px">
+    <p style="font-size:14px;color:#333;margin-bottom:14px">Quer falar diretamente com quem está nos depoimentos acima?</p>
+    <a href="https://wa.me/13059048054?text=Vi%20os%20depoimentos%20e%20gostaria%20de%20conversar." target="_blank" style="display:inline-block;background:#25D366;color:#fff;padding:14px 28px;font-weight:900;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-size:14px;border-radius:4px" onclick="if(window.fbq)fbq('trackCustom','WAResultTestClick');">💬 Falar com o corretor pelo WhatsApp</a>
+  </div>
+
+  <section class="g1-team">
+    <div class="g1-team-header">
+      <div class="label">Quem está por trás desta análise</div>
+      <h3>Os 2 Realtors® credenciados que te acompanham do diagnóstico ao closing</h3>
+      <p>Quando você clicar em "Fazer diagnóstico grátis" e completar as 7 perguntas, é com essa dupla — não com IA — que você fala. Ambos são Realtors® licenciados em Miami-Dade, atuam em parceria, e atendem 100% em português brasileiro:</p>
+    </div>
+    <div class="g1-team-grid g1-team-grid-2">
+      <div class="g1-team-card g1-team-card-big">
+        <div class="g1-team-photo-big"><img src="img/team_andre.png" alt="André Cunha Lima"></div>
+        <div class="g1-team-meta">
+          <div class="g1-team-name">André Cunha Lima</div>
+          <div class="g1-team-role">Realtor® &middot; Senior Broker &middot; Miami-Dade</div>
+          <div class="g1-team-bio">Corretor parceiro principal. Inventário ao vivo de 7.000+ imóveis via MLS Miami-Dade. Conduz visitas, ofertas e negociação. Especialista em compradores brasileiros high-net-worth. Atendimento PT/ES/EN.</div>
+        </div>
+      </div>
+      <div class="g1-team-card g1-team-card-big">
+        <div class="g1-team-photo-big"><img src="img/team_daniella.png" alt="Daniella Cunha Lima"></div>
+        <div class="g1-team-meta">
+          <div class="g1-team-name">Daniella Cunha Lima</div>
+          <div class="g1-team-role">Realtor® &middot; Co-broker &middot; Família</div>
+          <div class="g1-team-bio">Co-corretora, especializada em transições familiares brasileiras. Conexão direta com as 4 escolas internacionais bilíngues do Triângulo de Ouro. Coordena o Concierge Educacional pros filhos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <div class="section">
+    <div class="label">Próximos passos</div>
+    <h2>Como funciona, do diagnóstico ao closing</h2>
+    <ol style="padding-left:20px;margin:10px 0;font-size:14px;line-height:1.7">
+      <li style="margin-bottom:7px"><strong>Hoje:</strong> Você recebe seu relatório personalizado em PDF (até 15 min).</li>
+      <li style="margin-bottom:7px"><strong>Próximas 48h:</strong> Reunião com o corretor parceiro (canal escolhido).</li>
+      <li style="margin-bottom:7px"><strong>Semanas 1–4:</strong> Visitas a 3-5 imóveis pré-selecionados (incluindo off-market). Concierge Educacional ativado.</li>
+      <li style="margin-bottom:7px"><strong>Semanas 5–8:</strong> Estruturação tributária (CBE, LLC). Mapa de Negócios USA entregue.</li>
+      <li style="margin-bottom:0"><strong>Semanas 9–12:</strong> Closing. Você está dentro do imóvel — família encaminhada na escola, oportunidades operacionais sob análise.</li>
+    </ol>
+  </div>
+
+  <!-- BOTTOM CTA REINFORCE -->
+  <div class="preview-box" style="text-align:center;margin-bottom:0">
+    <div class="label">Pronto pra começar?</div>
+    <h2 style="margin-bottom:12px">Sua próxima ação está acima ↑</h2>
+    <p style="margin-bottom:16px"><strong>Sua próxima decisão pesa.</strong> Role a página de volta e clique no botão principal pra <span id="finalCtaWord">agendar sua reunião</span> — antes que a janela Lei 14.754 feche, antes que as 3 vagas semanais com Daniella &amp; André se esgotem, antes que outro brasileiro com o mesmo perfil pegue um dos imóveis off-market que circulam só dentro do circuito.</p>
+    <a href="#ctaSection" style="display:inline-block;background:var(--g1-red);color:#fff;padding:14px 32px;text-decoration:none;font-weight:900;letter-spacing:1px;text-transform:uppercase;font-size:13px">Voltar ao topo ↑</a>
+  </div>
+
+  <div class="legal-disc">Este relatório é informativo, baseado nas suas respostas ao diagnóstico. Não substitui consultoria jurídica, contábil ou imobiliária individualizada. Heritage Signal opera em parceria com corretor credenciado em Miami-Dade. Imóveis exibidos são dados representativos do estoque ativo, em parceria informativa com miamiresidence.com — preços, disponibilidade e regras sujeitos a confirmação. Bônus (Concierge Educacional e Mapa de Negócios USA) sujeitos a confirmação de elegibilidade após reunião com o corretor. P1 é marca própria, sem vínculo com qualquer veículo de imprensa tradicional.</div>
+
+</div>
+
+<div class="g1-footer">
+  <div class="brand">P1</div>
+  Patrimônio Atlântico — Reportagem especializada em internacionalização patrimonial
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;opacity:.95;line-height:1.7">
+    Corretor parceiro credenciado Miami-Dade:<br>
+    <strong style="color:#C4170C;font-weight:900">Daniella &amp; André Cunha Lima · Realtors®</strong><br>
+    <a href="corretor.html" style="color:#FFCFCB">Perfil</a> · <a href="https://www.andrecunhalima.com" target="_blank" style="color:#FFCFCB">Site oficial</a> · <a href="tel:+13059048054" style="color:#FFCFCB">+1 (305) 904-8054</a> · <a href="mailto:andre@andrecunhalima.com" style="color:#FFCFCB">andre@andrecunhalima.com</a>
+  </div>
+  <div style="margin-top:6px;opacity:.7;font-size:11px">© 2026 Heritage Signal · <a href="#">Privacidade</a> · <a href="#">Termos</a></div>
+</div>
+
+<div class="sticky-mobile"><a href="#ctaSection" id="stickyMobileBtn">Ver minha ação recomendada →</a></div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(window.location.search);
+  var tier=parseInt(p.get('tier'),10)||3;
+  var score=parseInt(p.get('score'),10)||0;
+  var angle=p.get('angle')||'';
+  var motivation=p.get('motivation')||'blindagem';
+  var name=p.get('name')||'';
+  var channel=p.get('channel')||'whatsapp';
+
+  if(window.fbq)fbq('trackCustom','ResultView',{tier:tier,score:score,motivation:motivation});
+  if(window.clarity){clarity('event','result_view_tier_'+tier);clarity('set','tier',String(tier));clarity('set','motivation',motivation)}
+
+  var tierBadge=document.getElementById('tierBadge');
+  var heroH1=document.getElementById('heroHeadline');
+  var heroSub=document.getElementById('heroSub');
+  var scoreText=document.getElementById('scoreText');
+  var scoreFill=document.getElementById('scoreFill');
+  var urgencyBar=document.getElementById('urgencyBar');
+  var finalCtaWord=document.getElementById('finalCtaWord');
+  var displayName=name?', '+name:'';
+
+  if(tier===1){
+    tierBadge.className='badge tier1';tierBadge.textContent='✓ QUALIFICADO · TIER 1';
+    heroH1.innerHTML='Sua inversão patrimonial pode valer entre <span class="name">R$ 700K e R$ 2,4M por ano</span>'+displayName+'. Vamos calcular o número exato agora.';
+    heroSub.textContent='Você qualificou em todas as 7 variáveis. Patrimônio, timeline e motivação alinhados com a janela Lei 14.754 que fecha em janeiro/2027. O corretor parceiro Daniella & André vai te mostrar a planilha real do SEU caso — em 30 minutos, esta semana.';
+    urgencyBar.innerHTML='<strong>DEADLINE LEI 14.754:</strong> 8 meses até janeiro/2027 · 3 vagas restantes esta semana com André &amp; Daniella';
+    finalCtaWord.textContent='agendar a reunião que mostra o seu número';
+  }else if(tier===2){
+    tierBadge.className='badge tier2';tierBadge.textContent='✓ PRÉ-QUALIFICADO · TIER 2';
+    heroH1.innerHTML='Falta pouco pra você fazer <span class="name">o cálculo da inversão</span>'+displayName+'. Seu cenário cabe na janela — só precisa amadurecer 2 detalhes.';
+    heroSub.textContent='Patrimônio e motivação alinhados, mas timeline ou estrutura ainda em formação. Vamos te mandar o relatório PDF + o plano específico de 90 dias pra você chegar pronto na reunião com o corretor parceiro Daniella & André.';
+    urgencyBar.innerHTML='Você sobe pra Tier 1 (reunião direta) assim que sua estrutura amadurecer · sem entrar em fila';
+    finalCtaWord.textContent='receber a sequência que te leva pro Tier 1';
+  }else{
+    tierBadge.className='badge tier3';tierBadge.textContent='EM EXPLORAÇÃO · TIER 3';
+    heroH1.innerHTML='Você ainda está <span class="name">mapeando o terreno</span>'+displayName+' — e isso é exatamente onde a maioria dos clientes que fecharam Miami em 2025 estavam 12 meses antes.';
+    heroSub.textContent='Antes de qualquer movimento, faz sentido entender as 3 janelas (Lei 14.754, escolas públicas grátis, ROI do Triplo Verão) que mudam a equação inteira. Preparamos a sequência mensal que te leva do "explorando" pro "pronto pra agendar" em 6-9 meses.';
+    urgencyBar.innerHTML='Newsletter mensal exclusiva · Sem ruído · 1 email/mês com conteúdo aprofundado';
+    finalCtaWord.textContent='começar a sequência de educação patrimonial';
+  }
+
+  scoreText.textContent=score+' / 100';
+  scoreFill.className='score-fill tier'+tier;
+  setTimeout(function(){scoreFill.style.width=Math.min(100,score)+'%'},300);
+
+  // DOSSIER
+  var dossierTitle=document.getElementById('dossierTitle');
+  var dossierIntro=document.getElementById('dossierIntro');
+  var dossierFacts=document.getElementById('dossierFacts');
+  var dossierMap={
+    blindagem:{title:'Sua Inversão: R$ 280K-540K de IR economizado em 5 anos via janela Lei 14.754',intro:'Você qualificou no ângulo de blindagem patrimonial. A planilha aplicada ao seu caso aponta a janela tributária da Lei 14.754/2023 fechando em jan/2027 como o vetor central — e mostra exatamente quanto você economiza se mover antes vs depois.',facts:[['Estruturação','LLC + CBE + Lei 14.754'],['Economia tributária 5 anos','R$ 280K a R$ 540K'],['Necessita visto americano','Não'],['Janela ideal fechamento','Até dezembro/2026'],['Suporte tributário','Advogado parceiro em SP']]},
+    renda:{title:'Seu Yield REAL: 18-22% a.a. em dólar (não os 8% que o agente Orlando te promete)',intro:'Você qualificou no ângulo de renda em dólar. A Calculadora Triplo Verão aplicada ao seu ticket aponta yield real de 18-22% — 3x mais que Orlando, que é onde 87% dos brasileiros são vendidos primeiro. A diferença está numa linha que nenhuma corretora americana mostra: a temporada latina de junho-agosto.',facts:[['Yield líquido projetado','6,2% a 6,8% a.a.'],['Retorno total estimado','18% a 22% a.a. USD'],['Edifícios short-term permitidos','11 mapeados'],['Management recomendada','Boutique latino, 18-22%'],['Vacância realista','18% a 25%']]},
+    lifestyle:{title:'Sua Família em Miami: economia de R$ 360K-720K/ano só em escola particular',intro:'Você qualificou no ângulo de base familiar. A planilha aplicada ao seu caso aponta o corredor geográfico que conecta seu imóvel ideal às 4 escolas internacionais bilíngues do Triângulo de Ouro (ou 17 cidades com escola pública top-100 grátis). Inclui aluguel parcial pra cobrir 60% dos custos quando você não está usando.',facts:[['Escolas raio 15min','4 (Cushman, Carrollton, Beacon, ASD)'],['Aluguel parcial possível','Sim, 4-6 meses/ano'],['Comunidade brasileira','400+ famílias mapeadas'],['Distância MIA','20-35 min'],['Visto americano','Recomendado, não obrigatório']]},
+    status:{title:'Seu Acesso: 1 dos 6 edifícios onde mora Lemann, Saverin e founders Nubank',intro:'Você qualificou no ângulo de pertencimento ao círculo internacional. Os 6 edifícios do Triângulo de Ouro 33139 são o vetor central — incluindo lista off-market que circula apenas entre 4-5 corretores que operam dentro do circuito brasileiro de Miami. Daniella & André são 2 deles.',facts:[['Edifícios prioritários','3 do seu intervalo'],['Densidade brasileira','18% a 28% das unidades'],['Eventos comunidade/mês','12 a 18 (alta temp)'],['Tempo até primeiro convite','4 a 8 semanas'],['Off-market disponível','Lista incluída no relatório']]},
+    visto:{title:'Estratégia: EB-5 / E-2 via Aquisição Estruturada',intro:'Sua motivação principal é caminho para residência. Aquisição estruturada via Regional Center EB-5 ou E-2 (combinada com imóvel residencial) como vetor central.',facts:[['Programa recomendado','A definir em reunião'],['Investimento mín. EB-5 TEA','US$ 800.000'],['Investimento mín. E-2','US$ 100K-200K'],['Timeline I-526E','14 a 24 meses'],['Advogado imigração','Miami-based, em PT']]}
+  };
+  var dossier=dossierMap[motivation]||dossierMap.blindagem;
+  dossierTitle.textContent=dossier.title;
+  dossierIntro.textContent=dossier.intro;
+  var fh='';dossier.facts.forEach(function(f){fh+='<div class="fact-row"><span class="fl">'+f[0]+'</span><span class="fv">'+f[1]+'</span></div>'});
+  dossierFacts.innerHTML=fh;
+
+  // ============ PROPERTIES DATA (12 listings) ============
+  var ALL_PROPS=[
+    // ENTRY ($1.1M-$2M) — Brickell focus, short-term friendly
+    {id:1,bldg:'Aston Martin Residences',loc:'Brickell · 33131',beds:1,baths:1.5,sqft:920,price:1395000,img:'img/prop_01_astonmartin_1br.png',badges:['SHORT-TERM OK'],tags:['renda','visto']},
+    {id:2,bldg:'Brickell Flatiron',loc:'Brickell · 33131',beds:2,baths:2,sqft:1380,price:1250000,img:'img/prop_02_brickellflatiron.png',badges:['SHORT-TERM OK'],tags:['renda','visto']},
+    {id:3,bldg:'1010 Brickell',loc:'Brickell · 33131',beds:2,baths:2,sqft:1200,price:1150000,img:'img/prop_03_1010brickell.png',badges:['SHORT-TERM OK','OFF-MARKET'],tags:['renda','visto']},
+    {id:4,bldg:'Aston Martin Residences',loc:'Brickell · 33131',beds:2,baths:2.5,sqft:1420,price:1895000,img:'img/prop_04_astonmartin_2br.png',badges:['VERIFICADO'],tags:['renda','visto','blindagem']},
+
+    // MID ($2M-$3M) — Tax efficient, multi-purpose
+    {id:5,bldg:'Continuum South Beach',loc:'South Beach · 33139',beds:2,baths:2.5,sqft:1750,price:2490000,img:'img/prop_05_continuum.png',badges:['VERIFICADO'],tags:['blindagem','status']},
+    {id:6,bldg:'One Thousand Museum',loc:'Brickell · 33131',beds:2,baths:2.5,sqft:1650,price:2690000,img:'img/prop_06_onethousand.png',badges:['DESTAQUE'],tags:['blindagem','status','visto']},
+    {id:7,bldg:'St Regis Bal Harbour',loc:'Bal Harbour · 33154',beds:2,baths:2.5,sqft:1890,price:2950000,img:'img/prop_07_stregis_2br.png',badges:['HOTEL SERVICE'],tags:['blindagem','status','lifestyle']},
+    {id:8,bldg:'Ritz Carlton Bal Harbour',loc:'Bal Harbour · 33154',beds:2,baths:2.5,sqft:1650,price:1985000,img:'img/prop_08_ritz.png',badges:['VERIFICADO'],tags:['lifestyle','blindagem']},
+
+    // PREMIUM ($3M-$6M) — Status, lifestyle, ultra
+    {id:9,bldg:'Oceana Bal Harbour',loc:'Bal Harbour · 33154',beds:3,baths:3.5,sqft:2250,price:3890000,img:'img/prop_09_oceana.png',badges:['OFF-MARKET'],tags:['lifestyle','status']},
+    {id:10,bldg:'Estates at Acqualina',loc:'Sunny Isles · 33160',beds:3,baths:3.5,sqft:2800,price:4950000,img:'img/prop_10_acqualina.png',badges:['DESTAQUE'],tags:['lifestyle','status']},
+    {id:11,bldg:'Faena House',loc:'Mid-Beach · 33140',beds:2,baths:2.5,sqft:2100,price:4200000,img:'img/prop_11_faena.png',badges:['BOUTIQUE'],tags:['status','lifestyle']},
+    {id:12,bldg:'St Regis Bal Harbour',loc:'Bal Harbour · 33154',beds:3,baths:3.5,sqft:2650,price:5800000,img:'img/prop_12_stregis_3br.png',badges:['OCEAN VIEW'],tags:['status','lifestyle']}
+  ];
+
+  function fmtPrice(p){
+    return 'US$ '+p.toLocaleString('pt-BR').replace(/,/g,'.');
+  }
+  function buildPropCard(p){
+    var badgesHtml=(p.badges||[]).map(function(b){
+      var cls='';
+      if(b==='OFF-MARKET')cls=' off';
+      else if(b==='VERIFICADO')cls=' verif';
+      return '<span class="b-badge'+cls+'">'+b+'</span>';
+    }).join('');
+    var pricePerSqft=Math.round(p.price/p.sqft);
+    return '<div class="prop-card">'+
+      '<div class="img-wrap"><img src="'+p.img+'" alt="'+p.bldg+' '+p.loc+'" loading="lazy">'+
+      '<div class="badge-strip">'+badgesHtml+'</div></div>'+
+      '<div class="p-meta">'+
+        '<div class="p-bldg">'+p.bldg+'</div>'+
+        '<div class="p-title">'+p.beds+'BR / '+p.baths+'BA · '+p.sqft.toLocaleString('pt-BR').replace(/,/g,'.')+' sqft</div>'+
+        '<div class="p-loc">'+p.loc+'</div>'+
+        '<div class="p-specs">'+
+          '<span><strong>'+p.beds+'</strong><em>Quartos</em></span>'+
+          '<span><strong>'+p.baths+'</strong><em>Banheiros</em></span>'+
+          '<span><strong>'+p.sqft.toLocaleString('pt-BR').replace(/,/g,'.')+'</strong><em>sqft</em></span>'+
+        '</div>'+
+        '<div class="p-price">'+fmtPrice(p.price)+'</div>'+
+        '<div class="p-price-sub">≈ US$ '+pricePerSqft.toLocaleString('pt-BR').replace(/,/g,'.')+'/sqft · estoque ativo mai/2026</div>'+
+        '<div class="p-action"><a href="#ctaSection" class="prop-cta" data-bldg="'+p.bldg+'">Ver com corretor →</a></div>'+
+      '</div>'+
+    '</div>';
+  }
+
+  // Filter properties by motivation
+  function filterProps(motivation,tier){
+    var matching=ALL_PROPS.filter(function(p){
+      return p.tags.indexOf(motivation)!==-1;
+    });
+    // If less than 8, fill with adjacent matches (overall top properties)
+    if(matching.length<8){
+      var ids=matching.map(function(p){return p.id});
+      ALL_PROPS.forEach(function(p){
+        if(matching.length<10&&ids.indexOf(p.id)===-1)matching.push(p);
+      });
+    }
+    // Tier 3 sees fewer (preview only)
+    if(tier===3)matching=matching.slice(0,6);
+    else matching=matching.slice(0,12);
+    return matching;
+  }
+
+  var filteredProps=filterProps(motivation,tier);
+  document.getElementById('propsGrid').innerHTML=filteredProps.map(buildPropCard).join('');
+  document.getElementById('propsCount').textContent=filteredProps.length;
+
+  // Update title based on motivation
+  var propsTitles={
+    blindagem:'Imóveis Miami estruturáveis sob Lei 14.754 — disponíveis esta semana',
+    renda:'Imóveis Miami com short-term rental permitido — yield otimizado',
+    lifestyle:'Imóveis Miami familiares próximos às escolas internacionais',
+    status:'Imóveis Miami nos 6 edifícios da comunidade brasileira',
+    visto:'Imóveis Miami compatíveis com programa EB-5 / E-2'
+  };
+  document.getElementById('propsTitle').textContent=propsTitles[motivation]||propsTitles.blindagem;
+
+  // Track property card clicks
+  document.querySelectorAll('.prop-cta').forEach(function(a){
+    a.addEventListener('click',function(){
+      var bldg=this.getAttribute('data-bldg');
+      if(window.fbq)fbq('trackCustom','PropertyClick',{building:bldg,tier:tier});
+      if(window.clarity)clarity('event','property_click_'+bldg.replace(/\s/g,'_'));
+    });
+  });
+
+  // BUILDINGS suggestions
+  var bldgMap={
+    blindagem:[['One Thousand Museum','Brickell · 33131','US$ 2,6M+','img/bldg_onethousand.png'],['Continuum South Beach','South Beach · 33139','US$ 2,4M+','img/bldg_continuum.png'],['St Regis Bal Harbour','Bal Harbour · 33154','US$ 2,8M+','img/bldg_stregis.png']],
+    renda:[['Aston Martin Residences','Brickell · 33131','US$ 1,3M+','img/prop_04_astonmartin_2br.png'],['Brickell Flatiron','Brickell · 33131','US$ 1,1M+','img/prop_02_brickellflatiron.png'],['Continuum South Beach','South Beach · 33139','US$ 2,4M+','img/bldg_continuum.png']],
+    lifestyle:[['St Regis Bal Harbour','Bal Harbour · 33154','US$ 2,8M+','img/bldg_stregis.png'],['Estates at Acqualina','Sunny Isles · 33160','US$ 3,5M+','img/bldg_acqualina.png'],['Faena House','Mid-Beach · 33140','US$ 4M+','img/bldg_faena.png']],
+    status:[['Faena House','Mid-Beach · 33140','US$ 4M+','img/bldg_faena.png'],['Estates at Acqualina','Sunny Isles · 33160','US$ 3,5M+','img/bldg_acqualina.png'],['Aston Martin Residences','Brickell · 33131','US$ 1,3M+','img/prop_04_astonmartin_2br.png']],
+    visto:[['One Thousand Museum','Brickell · 33131','US$ 2,6M+','img/bldg_onethousand.png'],['Aston Martin Residences','Brickell · 33131','US$ 1,3M+','img/prop_04_astonmartin_2br.png'],['Estates at Acqualina','Sunny Isles · 33160','US$ 3,5M+','img/bldg_acqualina.png']]
+  };
+  var bldgs=bldgMap[motivation]||bldgMap.blindagem;
+  var bh='';bldgs.forEach(function(b){bh+='<div class="bldg-card"><img src="'+b[3]+'" alt="'+b[0]+'" loading="lazy"><div class="bm"><div class="bn">'+b[0]+'</div><div class="bz">'+b[1]+'</div><div class="bp">Entrada '+b[2]+'</div></div></div>'});
+  document.getElementById('bldgList').innerHTML=bh;
+
+  // CTA buttons
+  var ctaLabel=document.getElementById('ctaLabel');
+  var ctaTitle=document.getElementById('ctaTitle');
+  var ctaIntro=document.getElementById('ctaIntro');
+  var scarcity=document.getElementById('scarcityBox');
+  var ctaButtons=document.getElementById('ctaButtons');
+  var calWrap=document.getElementById('calendlyWrap');
+
+  if(tier===1){
+    ctaLabel.textContent='AGENDE AGORA · PRÓXIMAS 48H';
+    ctaTitle.textContent='Agende a reunião que vai te mostrar a planilha da SUA inversão';
+    ctaIntro.textContent='Em 30 minutos com André & Daniella, você vai ver: (1) quanto você pode economizar por ano só de IR usando a janela 14.754 antes de jan/2027; (2) quanto você gasta hoje em SP em "custos invisíveis" que somem em Miami; (3) qual dos 6 edifícios do Triângulo de Ouro cabe no seu ticket; e (4) a estratégia de 90 dias do diagnóstico ao closing. Bônus ativados na reunião: Concierge Educacional + Mapa de Negócios USA.';
+    scarcity.innerHTML='Esta semana: <strong>3 vagas restantes</strong> · André &amp; Daniella atendem no máximo 8 reuniões/semana pra garantir profundidade';
+    var whatsBtn=channel==='whatsapp'?'<a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20diagn%C3%B3stico%20no%20Heritage%20Signal%20e%20fui%20classificado%20Tier%201.%20Gostaria%20de%20agendar%20a%20reuni%C3%A3o." class="cta-secondary cta-whats" id="whatsCta" target="_blank">Falar pelo WhatsApp agora →</a>':'';
+    ctaButtons.innerHTML='<a href="https://calendly.com/CALENDLY_URL" class="cta-primary" id="cal1Cta" target="_blank">Agendar minha reunião — gratuito →</a>'+whatsBtn;
+    calWrap.style.display='block';
+  }else if(tier===2){
+    ctaLabel.textContent='RECEBA SEU PLANO DE 90 DIAS';
+    ctaTitle.textContent='Receba a sequência que te leva de Tier 2 pra Tier 1 em 60-90 dias';
+    ctaIntro.textContent='Nos próximos 7 dias você recebe: (1) relatório PDF detalhado do seu caso, (2) planilha da Calculadora Triplo Verão aplicada ao seu ticket, (3) checklist tributário pra levar ao seu contador (com a cláusula 14.754 que ninguém comenta), (4) prévia dos 2 bônus, (5) convite pra webinar mensal com André & Daniella. Quando você terminar a sequência, sobe automaticamente pra Tier 1.';
+    scarcity.innerHTML='Quando você completar o checklist, <strong>vai pro Tier 1 e ganha reunião direta com o corretor parceiro</strong> · Sem precisar entrar em fila';
+    var whatsBtn2='<a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Sou%20Tier%202%20no%20Heritage%20Signal%20e%20tenho%20uma%20d%C3%BAvida%20pontual." class="cta-secondary cta-whats" id="whatsCta" target="_blank">Tirar dúvida pontual no WhatsApp →</a>';
+    ctaButtons.innerHTML='<a href="thankyou.html?tier=2&channel=email" class="cta-primary" id="emailCta">Quero receber a sequência completa →</a>'+whatsBtn2;
+  }else{
+    ctaLabel.textContent='COMEÇA POR AQUI · GRATUITO';
+    ctaTitle.textContent='Aprenda primeiro · 6 emails mensais que mudam a sua equação';
+    ctaIntro.textContent='Antes de qualquer movimento, vale entender as 3 janelas que mudam tudo: (1) Lei 14.754 e janela tributária de 2027, (2) 17 cidades da Flórida com escolas públicas top-100 grátis, (3) Calculadora Triplo Verão de aluguel temporada. 6 emails mensais aprofundados, sem ruído, sem spam. Quando seu cenário evoluir, você vira Tier 1 sem precisar começar do zero.';
+    scarcity.innerHTML='Quando seu patrimônio ou timeline amadurecerem, <strong>você sobe direto pra Tier 1 sem perder tempo na fila</strong>';
+    ctaButtons.innerHTML='<a href="thankyou.html?tier=3&channel=newsletter" class="cta-primary" id="newsCta">Quero receber a série educativa →</a>';
+    document.getElementById('buildingsSection').style.display='none';
+  }
+
+  setTimeout(function(){
+    document.querySelectorAll('#ctaButtons a, #stickyMobileBtn').forEach(function(a){
+      a.addEventListener('click',function(){
+        var ev=a.id||'cta_click';
+        if(window.fbq)fbq('trackCustom','ResultCTA',{tier:tier,button:ev});
+        if(window.clarity)clarity('event',ev);
+      });
+    });
+  },100);
+
+  // Forward UTM/clickid to thankyou
+  (function(){
+    var qs=window.location.search;if(!qs)return;
+    setTimeout(function(){
+      document.querySelectorAll('a[href]').forEach(function(a){
+        var h=a.getAttribute('href');
+        if(!h||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('#')===0)return;
+        if(h.indexOf('thankyou.html')===0)a.setAttribute('href',h+(h.indexOf('?')===-1?qs:'&'+qs.substring(1)));
+      });
+    },150);
+  })();
+})();
+</script>
+
+
+<script>
+/* Dynamic date — always shows today's date */
+(function(){
+  var d=new Date();
+  var M=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  var W=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+  var dd=String(d.getDate()).padStart(2,'0');
+  var mm=String(d.getMonth()+1).padStart(2,'0');
+  var yy=d.getFullYear();
+  var hh=String(d.getHours()).padStart(2,'0');
+  var mn=String(d.getMinutes()).padStart(2,'0');
+  // Updated time = a few hours before current
+  var ux=new Date(d.getTime()-Math.floor(Math.random()*4+2)*3600000);
+  var uhh=String(ux.getHours()).padStart(2,'0');
+  var umn=String(ux.getMinutes()).padStart(2,'0');
+  var shortD=dd+'/'+mm+'/'+yy;
+  var fullD=W[d.getDay()].charAt(0).toUpperCase()+W[d.getDay()].slice(1)+', '+d.getDate()+' de '+M[d.getMonth()]+' de '+yy;
+  var bylineD=shortD+' '+uhh+'h'+umn+' — Atualizada às '+hh+'h'+mn;
+  document.querySelectorAll('.js-date-short').forEach(function(e){e.textContent=shortD});
+  document.querySelectorAll('.js-date-weekday').forEach(function(e){e.textContent=fullD});
+  document.querySelectorAll('.js-date-byline').forEach(function(e){e.textContent=bylineD});
+  document.querySelectorAll('.js-date-month').forEach(function(e){e.textContent=M[d.getMonth()].charAt(0).toUpperCase()+M[d.getMonth()].slice(1)+' de '+yy});
+})();
+</script>
+<a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Vim%20do%20Patrim%C3%B4nio%20Atl%C3%A2ntico%20e%20quero%20mais%20info%20sobre%20im%C3%B3vel%20Miami." target="_blank" class="wa-float" aria-label="Falar no WhatsApp" onclick="if(window.fbq)fbq('trackCustom','WAFloatClick');if(window.clarity)clarity('event','wa_float_click');"><span class="wa-pulse"></span>💬</a>
+</body>
+</html>

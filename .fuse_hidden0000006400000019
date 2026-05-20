@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corretor parceiro · Daniella &amp; André Cunha Lima · Heritage Signal</title>
+<meta name="description" content="Daniella e André Cunha Lima são Realtors® credenciados em Miami-Dade, corretor parceiro oficial do Heritage Signal para compradores brasileiros.">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','META_PIXEL_ID');fbq('track','PageView');fbq('trackCustom','PartnerProfileView');
+</script>
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","CLARITY_ID");
+window.clarity&&clarity('event','corretor_view');
+</script>
+<style>
+:root{--g1-red:#C4170C;--g1-red-h:#A0120A;--g1-black:#1A1A1A;--g1-text:#333;--g1-muted:#717171;--g1-light:#F2F2F2;--g1-border:#E0E0E0;--g1-link:#0066B3;--g1-green:#1F6B3E}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--g1-text);background:#fff;line-height:1.55;font-size:16px}
+
+.g1-topbar{background:var(--g1-black);color:#fff;padding:6px 16px;font-size:11px;display:flex;justify-content:space-between;align-items:center}
+.g1-topbar .right a{color:#fff;text-decoration:none;margin-left:14px;opacity:.85;font-size:11px}
+.g1-header-main{display:flex;align-items:center;padding:12px 24px;border-bottom:4px solid var(--g1-red);background:#fff}
+.g1-logo{font-family:'Arial Black',Arial,sans-serif;font-size:36px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;line-height:1}
+.g1-section-tag{margin-left:14px;padding-left:14px;border-left:1px solid var(--g1-border);font-size:15px;font-weight:700;color:var(--g1-black);line-height:1;text-transform:uppercase;letter-spacing:.5px}
+.g1-header-right{margin-left:auto;display:flex;gap:14px;font-size:12px;color:var(--g1-muted)}
+.g1-breadcrumb{background:var(--g1-light);padding:8px 24px;font-size:12px;border-bottom:1px solid var(--g1-border);color:var(--g1-muted)}
+.g1-breadcrumb a{color:var(--g1-link);text-decoration:none}
+
+.container{max-width:900px;margin:0 auto;padding:32px 24px}
+
+.kicker{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:14px}
+
+.profile-hero{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;margin-bottom:30px;padding-bottom:30px;border-bottom:4px solid var(--g1-red)}
+.profile-photo{width:200px;height:200px;background:var(--g1-light);border:4px solid var(--g1-red);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;color:var(--g1-muted);padding:14px;line-height:1.4}
+.profile-photo img{width:100%;height:100%;object-fit:cover}
+.profile-info h1{font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:1.15;color:var(--g1-black);margin-bottom:6px;font-weight:900;letter-spacing:-.3px}
+.profile-info .role{font-size:14px;color:var(--g1-red);font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.profile-info .creds{font-size:14px;color:var(--g1-text);line-height:1.7}
+.profile-info .creds strong{color:var(--g1-black);font-weight:700}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
+.stat{background:var(--g1-light);padding:18px;text-align:center;border-top:3px solid var(--g1-red)}
+.stat .n{font-size:26px;font-weight:900;color:var(--g1-black);letter-spacing:-.5px;line-height:1;margin-bottom:6px}
+.stat .l{font-size:11px;color:var(--g1-muted);text-transform:uppercase;letter-spacing:.5px;line-height:1.4}
+
+h2.section{font-size:24px;font-weight:900;color:var(--g1-black);margin:32px 0 14px;line-height:1.3;letter-spacing:-.2px}
+p{font-size:15px;line-height:1.7;color:var(--g1-text);margin-bottom:14px}
+p strong{color:var(--g1-black);font-weight:700}
+
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.area-tag{background:var(--g1-light);padding:12px 14px;border-left:3px solid var(--g1-red);font-size:13px;font-weight:700;color:var(--g1-black);text-transform:uppercase;letter-spacing:.5px}
+
+.testimonial-pro{background:var(--g1-light);padding:24px;margin:20px 0;border-left:4px solid var(--g1-red);font-style:italic;font-size:15px;line-height:1.6;color:var(--g1-black)}
+.testimonial-pro cite{display:block;margin-top:12px;font-size:12px;font-style:normal;color:var(--g1-muted);letter-spacing:1px;text-transform:uppercase;font-weight:900}
+
+.contact-card{background:var(--g1-black);color:#fff;padding:28px;margin:30px 0;border-top:4px solid var(--g1-red)}
+.contact-card h3{font-size:20px;font-weight:900;margin-bottom:14px;color:#fff}
+.contact-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.contact-list a{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);padding:13px 16px;color:#fff;text-decoration:none;font-size:13px;font-weight:700;transition:all .15s}
+.contact-list a:hover{background:var(--g1-red);border-color:var(--g1-red)}
+.contact-list a .l{font-size:10px;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:3px;display:block}
+.contact-cta{display:flex;gap:10px;flex-wrap:wrap}
+.contact-cta a{flex:1;min-width:200px;background:var(--g1-red);color:#fff;padding:14px;text-align:center;text-decoration:none;font-size:13px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.contact-cta a:hover{background:var(--g1-red-h)}
+.contact-cta a.whats{background:#25D366}
+.contact-cta a.whats:hover{background:#1FB855}
+
+.disclosure{font-size:12px;color:var(--g1-muted);background:var(--g1-light);padding:14px 18px;margin:24px 0;border-left:3px solid var(--g1-border);line-height:1.5}
+
+.g1-footer{background:var(--g1-black);color:#fff;padding:24px;text-align:center;font-size:12px;margin-top:32px}
+.g1-footer .brand{font-family:'Arial Black',Arial,sans-serif;font-size:22px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;margin-bottom:6px}
+.g1-footer a{color:#FFCFCB;text-decoration:none}
+
+@media(max-width:700px){
+.profile-hero{grid-template-columns:1fr;text-align:center;gap:18px}
+.profile-photo{width:160px;height:160px;margin:0 auto}
+.profile-info h1{font-size:26px}
+.stats-row{grid-template-columns:1fr 1fr}
+.areas-grid{grid-template-columns:1fr 1fr}
+.contact-list{grid-template-columns:1fr}
+.g1-topbar{padding:5px 12px;font-size:10px}
+.g1-header-main{padding:10px 14px}.g1-logo{font-size:28px}.g1-section-tag{font-size:12px;margin-left:10px;padding-left:10px}
+.g1-breadcrumb{padding:7px 14px;font-size:11px}
+.container{padding:24px 14px}
+}
+</style>
+</head>
+<body>
+
+<div class="g1-topbar"><div>Edição Digital — 19 de maio de 2026</div><div class="right"><a href="imoveis.html">Portal de Imóveis</a></div></div>
+<div class="g1-header-main"><div class="g1-logo">P1</div><div class="g1-section-tag">Corretor Parceiro</div><div class="g1-header-right"><span>HERITAGE SIGNAL</span></div></div>
+<div class="g1-breadcrumb"><a href="#">P1</a> &rsaquo; <a href="#">Patrimônio Atlântico</a> &rsaquo; Corretor Parceiro</div>
+
+<div class="container">
+
+  <span class="kicker">Parceria oficial</span>
+
+  <div class="profile-hero">
+    <div class="profile-photo">
+      Foto Daniella &amp; André<br><span style="font-size:10px;opacity:.7">(substituir por foto profissional)</span>
+    </div>
+    <div class="profile-info">
+      <h1>Daniella &amp; André Cunha Lima</h1>
+      <div class="role">Realtors® · Miami-Dade · Broward</div>
+      <div class="creds">
+        Corretor parceiro oficial do Heritage Signal. Especialistas em <strong>compradores brasileiros</strong> em Miami, com inventário ao vivo de mais de <strong>7.000 imóveis</strong> via MLS Miami-Dade.<br><br>
+        Atendimento em português, espanhol e inglês. Cobertura completa do Triângulo de Ouro (Bal Harbour, Sunny Isles, Brickell) e dos principais bairros de Miami-Dade e Broward.
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat"><div class="n">7.000+</div><div class="l">Imóveis ao vivo no portal</div></div>
+    <div class="stat"><div class="n">18</div><div class="l">Bairros cobertos</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Idiomas (PT/ES/EN)</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Credenciados MLS Miami</div></div>
+  </div>
+
+  <h2 class="section">Por que essa parceria importa pra você</h2>
+  <p>O Heritage Signal é a plataforma de inteligência patrimonial — fazemos o diagnóstico, identificamos a estrutura tributária, mapeamos os edifícios certos do Triângulo de Ouro 33139. Mas quem leva o cliente do "interesse" ao "closing" precisa ser um Realtor® humano, credenciado, com licença ativa em Miami-Dade e acesso completo ao MLS.</p>
+  <p>É aí que entram a Daniella e o André. Eles operam um portal IDX profissional integrado ao MLS Miami-Dade (via Panda IDX), atendem em português brasileiro, conhecem profundamente os edifícios da comunidade brasileira, e fecharam um <strong>acordo de exclusividade comercial</strong> com o Heritage Signal — todos os leads gerados pelo nosso funil têm prioridade na agenda deles, e o cliente recebe o atendimento dedicado da dupla durante todo o ciclo de aquisição.</p>
+
+  <h2 class="section">Áreas de cobertura</h2>
+  <p>Atendimento ativo em Miami-Dade e Broward County. Foco principal no Triângulo de Ouro (Bal Harbour, Sunny Isles, Brickell) e nos bairros premium adjacentes:</p>
+  <div class="areas-grid">
+    <div class="area-tag">Brickell</div>
+    <div class="area-tag">Miami Beach</div>
+    <div class="area-tag">Sunny Isles Beach</div>
+    <div class="area-tag">Aventura</div>
+    <div class="area-tag">Bal Harbour</div>
+    <div class="area-tag">Downtown Miami</div>
+    <div class="area-tag">Edgewater</div>
+    <div class="area-tag">Coconut Grove</div>
+    <div class="area-tag">Coral Gables</div>
+    <div class="area-tag">Midtown Miami</div>
+    <div class="area-tag">Wynwood</div>
+    <div class="area-tag">Hollywood Beach</div>
+    <div class="area-tag">Hallandale Beach</div>
+    <div class="area-tag">Fort Lauderdale</div>
+    <div class="area-tag">Las Olas Isles</div>
+    <div class="area-tag">Plantation</div>
+    <div class="area-tag">Weston</div>
+    <div class="area-tag">Boca Raton</div>
+  </div>
+
+  <h2 class="section">O que clientes brasileiros dizem</h2>
+  <div class="testimonial-pro">
+    "Eu já tinha falado com 3 corretores americanos sem o feeling certo. A Daniella e o André entendem o brasileiro — não só falam português, sabem como nossa cabeça funciona, o que importa de fato pra família. Em 30 min de reunião, mais clareza do que em 6 meses pesquisando sozinho."
+    <cite>— Roberto M., empresário de logística, SP</cite>
+  </div>
+  <div class="testimonial-pro">
+    "O acesso a unidades off-market que eles têm vale o processo inteiro. Eu visitei imóveis que eu jamais teria encontrado no Zillow ou Realtor.com. E o suporte com Inter Miami, estruturação CBE, advogado tributarista — tudo encaminhado, em português."
+    <cite>— Marcelo T., founder ex-SaaS, SP</cite>
+  </div>
+
+  <h2 class="section">Como funciona o atendimento</h2>
+  <p><strong>Você não precisa contatar a Daniella e o André diretamente do nada.</strong> O fluxo é:</p>
+  <p style="padding-left:20px"><strong>1.</strong> Você faz o diagnóstico Heritage Signal (gratuito, 30s).<br>
+  <strong>2.</strong> Se qualificar para Tier 1, recebe agenda direta com a dupla via Calendly ou WhatsApp.<br>
+  <strong>3.</strong> Reunião de 30 min: revisão do dossiê + 3 a 5 imóveis específicos + cronograma de 90 dias.<br>
+  <strong>4.</strong> Eles conduzem visitas, ofertas e closing — você acompanha do Brasil ou presencialmente.<br>
+  <strong>5.</strong> Bônus Heritage (Concierge Educacional + Mapa de Negócios USA) ativados em paralelo.</p>
+
+  <div class="contact-card">
+    <h3>Contato direto · Daniella &amp; André Cunha Lima</h3>
+    <div class="contact-list">
+      <a href="tel:+13059048054"><span class="l">Telefone</span>+1 (305) 904-8054</a>
+      <a href="mailto:andre@andrecunhalima.com"><span class="l">Email</span>andre@andrecunhalima.com</a>
+      <a href="https://www.andrecunhalima.com" target="_blank"><span class="l">Site oficial</span>andrecunhalima.com</a>
+      <a href="https://www.andrecunhalima.com/areas/miami-areas" target="_blank"><span class="l">Portal MLS</span>7.000+ imóveis ao vivo</a>
+    </div>
+    <div class="contact-cta">
+      <a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Vim%20do%20Heritage%20Signal%20Patrim%C3%B4nio%20Atl%C3%A2ntico." class="whats" target="_blank" id="ctaWhats">WhatsApp direto →</a>
+      <a href="quiz.html" id="ctaQuiz">Fazer diagnóstico Heritage primeiro →</a>
+    </div>
+  </div>
+
+  <div class="disclosure">
+    <strong>Sobre a parceria:</strong> Heritage Signal é uma plataforma editorial de inteligência patrimonial e não opera diretamente como corretora imobiliária. Toda corretagem é conduzida pela equipe Daniella &amp; André Cunha Lima, Realtors® credenciados em Miami-Dade County, com licenças ativas no Florida Real Estate Commission. P1 e Patrimônio Atlântico são marcas próprias do Heritage Signal, sem vínculo com qualquer veículo de imprensa tradicional.
+  </div>
+
+</div>
+
+<div class="g1-footer">
+  <div class="brand">P1</div>
+  Patrimônio Atlântico · © 2026 Heritage Signal
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;opacity:.95;line-height:1.7">
+    Corretor parceiro credenciado Miami-Dade:<br>
+    <strong style="color:#C4170C;font-weight:900">Daniella &amp; André Cunha Lima · Realtors®</strong><br>
+    <a href="https://www.andrecunhalima.com" target="_blank">Site oficial</a> · <a href="tel:+13059048054">+1 (305) 904-8054</a> · <a href="mailto:andre@andrecunhalima.com">andre@andrecunhalima.com</a>
+  </div>
+  <div style="margin-top:6px;opacity:.7;font-size:11px"><a href="#">Privacidade</a></div>
+</div>
+
+<script>
+['ctaWhats','ctaQuiz'].forEach(function(id){var e=document.getElementById(id);if(!e)return;e.addEventListener('click',function(){if(window.fbq)fbq('trackCustom','PartnerProfileCTA',{cta:id});if(window.clarity)clarity('event','partner_cta_'+id)})});
+(function(){var qs=window.location.search;if(!qs)return;document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||h.indexOf('http')===0||h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0)return;a.setAttribute('href',h+(h.indexOf('?')===-1?qs:'&'+qs.substring(1)))})})();
+</script>
+
+</body>
+</html>

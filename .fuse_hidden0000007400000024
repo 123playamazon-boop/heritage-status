@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirmado · P1 Patrimônio Atlântico</title>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','META_PIXEL_ID');fbq('track','PageView');fbq('track','CompleteRegistration');
+</script>
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","CLARITY_ID");
+window.clarity&&clarity('event','appointment_booked');window.clarity&&clarity('set','funnel_step','thankyou');
+</script>
+<style>
+:root{--g1-red:#C4170C;--g1-red-h:#A0120A;--g1-black:#1A1A1A;--g1-text:#333;--g1-muted:#717171;--g1-light:#F2F2F2;--g1-border:#E0E0E0;--g1-green:#1F6B3E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--g1-text);background:#fff;line-height:1.55;font-size:16px;min-height:100vh;display:flex;flex-direction:column}
+
+.g1-topbar{background:var(--g1-black);color:#fff;padding:6px 16px;font-size:11px;display:flex;justify-content:space-between;align-items:center}
+.g1-header-main{display:flex;align-items:center;padding:12px 24px;border-bottom:4px solid var(--g1-red);background:#fff}
+.g1-logo{font-family:'Arial Black',Arial,sans-serif;font-size:36px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;line-height:1}
+.g1-section-tag{margin-left:14px;padding-left:14px;border-left:1px solid var(--g1-border);font-size:15px;font-weight:700;color:var(--g1-black);line-height:1;text-transform:uppercase;letter-spacing:.5px}
+
+.container{flex:1;max-width:680px;margin:0 auto;padding:40px 24px;width:100%}
+
+.check-circle{width:84px;height:84px;background:var(--g1-green);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;animation:scaleIn .5s ease}
+.check-circle svg{width:46px;height:46px;fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+@keyframes scaleIn{from{transform:scale(0)}to{transform:scale(1)}}
+
+h1{font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:1.25;color:var(--g1-black);margin-bottom:14px;text-align:center;font-weight:900;letter-spacing:-.3px}
+.sub{font-size:17px;color:var(--g1-text);text-align:center;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.5}
+.sub strong{color:var(--g1-black);font-weight:700}
+
+.kicker{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:14px}
+
+.next-steps{background:#fff;border:1px solid var(--g1-border);border-top:4px solid var(--g1-red);padding:24px;margin-bottom:20px}
+.next-steps .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g1-red);font-weight:900;margin-bottom:14px}
+.next-steps h2{font-size:21px;color:var(--g1-black);margin-bottom:18px;font-weight:900}
+.step-list{padding:0;margin:0;list-style:none;counter-reset:step}
+.step-item{padding:14px 0 14px 48px;position:relative;border-bottom:1px solid var(--g1-border);counter-increment:step}
+.step-item:last-child{border-bottom:none}
+.step-item::before{content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;background:var(--g1-red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px}
+.step-item .when{font-size:11px;color:var(--g1-red);text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:4px}
+.step-item .what{font-size:14px;color:var(--g1-text);line-height:1.5}
+.step-item .what strong{color:var(--g1-black);font-weight:700}
+
+.whats-cta{background:#25D366;color:#fff;padding:22px;text-align:center;margin-bottom:20px;cursor:pointer;text-decoration:none;display:block;transition:background .2s}
+.whats-cta:hover{background:#1FB855}
+.whats-cta .wt{font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:.9;margin-bottom:8px;font-weight:900}
+.whats-cta .wm{font-size:21px;font-weight:900;line-height:1.3}
+.whats-cta .ws{font-size:13px;opacity:.9;margin-top:6px}
+
+.share-box{background:var(--g1-light);border:1px dashed var(--g1-red);padding:22px;text-align:center;margin-bottom:20px}
+.share-box h3{font-size:17px;color:var(--g1-black);margin-bottom:8px;font-weight:900}
+.share-box p{font-size:13px;color:var(--g1-muted);margin-bottom:14px;line-height:1.5}
+.share-btn{display:inline-block;background:#fff;border:2px solid var(--g1-black);color:var(--g1-black);font-weight:900;padding:11px 22px;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .15s;font-family:inherit}
+.share-btn:hover{background:var(--g1-black);color:#fff}
+
+.g1-footer{background:var(--g1-black);color:#fff;padding:20px 24px;text-align:center;font-size:12px}
+.g1-footer .brand{font-family:'Arial Black',Arial,sans-serif;font-size:20px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;margin-bottom:4px}
+.g1-footer a{color:#FFCFCB;text-decoration:none}
+
+@media(max-width:600px){
+.g1-topbar{padding:5px 12px;font-size:10px}.g1-header-main{padding:10px 14px}.g1-logo{font-size:28px}.g1-section-tag{font-size:12px;margin-left:10px;padding-left:10px}
+h1{font-size:24px}.container{padding:24px 16px}.step-item{padding-left:42px}.step-item::before{width:28px;height:28px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="g1-topbar"><div>Edição Digital — 19 de maio de 2026</div><div></div></div>
+<div class="g1-header-main"><div class="g1-logo">P1</div><div class="g1-section-tag">Confirmado</div></div>
+
+<div class="container">
+
+  <div style="text-align:center"><span class="kicker">Confirmação</span></div>
+
+  <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></div>
+
+  <div style="margin:0 -24px 24px"><img src="img/hero_thankyou.png" alt="Família brasileira em casa em Miami" style="width:100%;height:auto;display:block"></div>
+
+  <h1 id="thankH1">Pronto. Recebemos seu diagnóstico.</h1>
+  <p class="sub" id="thankSub">Seu relatório personalizado em PDF está sendo gerado e chega ao seu email em até 15 minutos. <strong>Confira a caixa de entrada e a pasta de Promoções/Spam.</strong></p>
+
+  <div class="next-steps">
+    <div class="label">Próximos passos</div>
+    <h2 id="stepsTitle">O que acontece a partir de agora</h2>
+    <ul class="step-list" id="stepList"></ul>
+  </div>
+
+  <a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Acabei%20de%20concluir%20o%20diagn%C3%B3stico%20no%20Heritage%20Signal." class="whats-cta" id="whatsLink" target="_blank">
+    <div class="wt">Atalho · Adiantar conversa</div>
+    <div class="wm">Falar com o corretor pelo WhatsApp agora</div>
+    <div class="ws">Resposta em até 1h em horário comercial · Português</div>
+  </a>
+
+  <div class="share-box">
+    <h3>Conhece outro empresário que se beneficiaria deste diagnóstico?</h3>
+    <p>Compartilhar com um sócio, irmão ou amigo é a forma mais comum dos nossos clientes começarem a operação familiar conjunta em Miami.</p>
+    <a href="#" class="share-btn" id="shareWhats">Compartilhar pelo WhatsApp</a>
+  </div>
+
+</div>
+
+<div class="g1-footer">
+  <div class="brand">P1</div>
+  Patrimônio Atlântico · © 2026 Heritage Signal
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;opacity:.95;line-height:1.7">
+    Corretor parceiro credenciado Miami-Dade:<br>
+    <strong style="color:#C4170C;font-weight:900">Daniella &amp; André Cunha Lima · Realtors®</strong><br>
+    <a href="corretor.html" style="color:#FFCFCB">Perfil</a> · <a href="https://www.andrecunhalima.com" target="_blank" style="color:#FFCFCB">Site oficial</a> · <a href="tel:+13059048054" style="color:#FFCFCB">+1 (305) 904-8054</a>
+  </div>
+  <div style="margin-top:6px;opacity:.7;font-size:11px"><a href="#">Privacidade</a></div>
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(window.location.search);
+  var tier=parseInt(p.get('tier'),10)||0;
+  var channel=p.get('channel')||'';
+  if(window.fbq){
+    fbq('trackCustom','Tier'+tier+'Confirmed',{channel:channel});
+    if(tier===1)fbq('track','Schedule');
+  }
+  if(window.clarity){clarity('event','tier_'+tier+'_confirmed');clarity('set','final_tier',String(tier))}
+
+  var content={
+    booked:{h1:'Reunião agendada. Vejo você em breve.',sub:'Sua reunião foi confirmada na agenda do corretor parceiro. Você recebeu o convite no email com link do Zoom/Meet. <strong>Reserve 30 minutos sem interrupções.</strong>',stepsTitle:'Como aproveitar ao máximo seus 30 minutos',steps:[['HOJE (em até 15min)','Seu <strong>relatório personalizado em PDF</strong> chega no email. Leia antes da reunião.'],['ATÉ 1 DIA ANTES','Prepare 2 ou 3 perguntas específicas. Quanto mais técnicas, mais útil a reunião.'],['NA REUNIÃO (30min)','Revisamos seu dossiê, discutimos 3-5 edifícios concretos, falamos sobre estruturação tributária.'],['ATÉ 7 DIAS DEPOIS','Você recebe lista de imóveis específicos (incluindo off-market). Visitas virtuais ou presenciais agendadas.']]},
+    email:{h1:'Recebido. Seu plano de 90 dias está sendo preparado.',sub:'Você está na <strong>fila Tier 2</strong>. Vamos te enviar nos próximos 7 dias o relatório completo + sequência de preparação.',stepsTitle:'Sua jornada de preparação',steps:[['HOJE','Relatório personalizado em PDF chega no email em até 15min.'],['DIA 3','Email com Planilha da Calculadora Triplo Verão aplicada ao seu perfil.'],['DIA 7','Checklist tributário para você levar ao seu contador (CBE, LLC, Lei 14.754).'],['DIA 14','Convite para webinar mensal com o corretor parceiro + sessão Q&A.'],['QUANDO ESTIVER PRONTO','Você sobe automaticamente para Tier 1 e ganha agenda direta com o corretor.']]},
+    newsletter:{h1:'Bem-vindo à sua jornada de internacionalização.',sub:'Você foi adicionado à nossa newsletter mensal exclusiva. <strong>Sem ruído, sem spam.</strong> Um email por mês com conteúdo aprofundado sobre patrimônio Brasil-EUA.',stepsTitle:'O que você vai receber',steps:[['HOJE','Manual do Iniciante em Internacionalização Patrimonial (PDF, 24 páginas).'],['MÊS 1','Como funciona a Lei 14.754/2023 — guia técnico em linguagem simples.'],['MÊS 2','Estruturação CBE e LLC americana — quando faz sentido cada uma.'],['MÊS 3','Miami vs Orlando — comparativo completo com planilhas reais.'],['QUANDO EVOLUIR','Quando seu perfil patrimonial ou timeline mudarem, você é convidado para o diagnóstico atualizado.']]}
+  };
+  var c=channel==='email'?content.email:(channel==='newsletter'?content.newsletter:content.booked);
+
+  document.getElementById('thankH1').textContent=c.h1;
+  document.getElementById('thankSub').innerHTML=c.sub;
+  document.getElementById('stepsTitle').textContent=c.stepsTitle;
+  var html='';c.steps.forEach(function(s){html+='<li class="step-item"><div class="when">'+s[0]+'</div><div class="what">'+s[1]+'</div></li>'});
+  document.getElementById('stepList').innerHTML=html;
+
+  document.getElementById('shareWhats').addEventListener('click',function(e){
+    e.preventDefault();
+    var txt=encodeURIComponent('Acabei de fazer um diagnóstico patrimonial focado em real estate Miami — bem profundo e gratuito. Acho que pode te interessar: '+window.location.origin);
+    window.open('https://wa.me/?text='+txt,'_blank');
+    if(window.fbq)fbq('trackCustom','ShareWhatsApp');
+    if(window.clarity)clarity('event','share_whatsapp');
+  });
+  document.getElementById('whatsLink').addEventListener('click',function(){
+    if(window.fbq)fbq('trackCustom','WhatsAppDirectClick',{tier:tier});
+    if(window.clarity)clarity('event','whatsapp_direct_click');
+  });
+})();
+</script>
+
+</body>
+</html>

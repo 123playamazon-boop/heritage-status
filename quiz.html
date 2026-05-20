@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Patrimônio Atlântico · P1</title>
+<meta name="description" content="3 perguntas. Relatório personalizado em PDF. Diagnóstico patrimonial para empresários e investidores brasileiros considerando Miami.">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','META_PIXEL_ID');fbq('track','PageView');
+</script>
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","CLARITY_ID");
+</script>
+<style>
+:root{--g1-red:#C4170C;--g1-red-h:#A0120A;--g1-black:#1A1A1A;--g1-text:#333;--g1-muted:#717171;--g1-light:#F2F2F2;--g1-border:#E0E0E0;--g1-link:#0066B3}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--g1-text);background:#fff;line-height:1.5;font-size:16px;display:flex;flex-direction:column;min-height:100vh}
+
+.g1-topbar{background:var(--g1-black);color:#fff;padding:6px 16px;font-size:11px;display:flex;justify-content:space-between;align-items:center}
+.g1-header-main{display:flex;align-items:center;padding:12px 24px;border-bottom:4px solid var(--g1-red);background:#fff}
+.g1-logo{font-family:'Arial Black',Arial,sans-serif;font-size:36px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;line-height:1}
+.g1-section-tag{margin-left:14px;padding-left:14px;border-left:1px solid var(--g1-border);font-size:15px;font-weight:700;color:var(--g1-black);line-height:1;text-transform:uppercase;letter-spacing:.5px}
+
+.progress-wrap{background:var(--g1-light);border-bottom:1px solid var(--g1-border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--g1-muted);letter-spacing:1px;text-transform:uppercase;font-weight:700}
+.progress-track{flex:1;height:6px;background:var(--g1-border);margin:0 14px;overflow:hidden}
+.progress-fill{height:100%;background:var(--g1-red);width:0%;transition:width .4s ease}
+
+.container{flex:1;max-width:720px;margin:0 auto;padding:32px 24px;width:100%;display:flex;flex-direction:column;justify-content:center}
+
+.question-wrap{display:none;animation:fadeIn .35s ease}
+.question-wrap.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.q-kicker{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:14px}
+.q-title{font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:1.25;color:var(--g1-black);margin-bottom:8px;font-weight:900;letter-spacing:-.3px}
+.q-sub{font-size:15px;color:var(--g1-muted);margin-bottom:28px;line-height:1.5}
+
+.option{display:block;background:#fff;border:1px solid var(--g1-border);padding:18px 22px;margin-bottom:10px;cursor:pointer;transition:all .15s ease;text-align:left;width:100%;font-family:inherit;font-size:16px;color:var(--g1-text);line-height:1.4}
+.option:hover{border-color:var(--g1-red);background:#FFF8F7;transform:translateX(4px);box-shadow:-2px 2px 0 var(--g1-red)}
+.option.selected{border-color:var(--g1-red);background:#FFF8F7;box-shadow:-2px 2px 0 var(--g1-red)}
+.option .opt-label{font-weight:900;color:var(--g1-black);display:block;margin-bottom:4px}
+.option .opt-desc{font-size:13px;color:var(--g1-muted)}
+
+.form-field{margin-bottom:18px}
+.form-field label{display:block;font-size:12px;font-weight:900;color:var(--g1-black);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase}
+.form-field input{width:100%;padding:14px 16px;font-family:inherit;font-size:16px;border:1px solid var(--g1-border);background:#fff;color:var(--g1-text);transition:border-color .2s}
+.form-field input:focus{outline:none;border-color:var(--g1-red);box-shadow:-2px 2px 0 var(--g1-red)}
+.form-field .hint{font-size:12px;color:var(--g1-muted);margin-top:4px}
+
+.submit-btn{display:block;width:100%;background:var(--g1-red);color:#fff;font-weight:900;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:18px;border:none;cursor:pointer;transition:background .2s;margin-top:18px;font-family:inherit}
+.submit-btn:hover{background:var(--g1-red-h)}
+.submit-btn:disabled{background:var(--g1-border);cursor:not-allowed}
+
+.legal{font-size:11px;color:var(--g1-muted);margin-top:16px;line-height:1.5;text-align:center}
+
+.processing{text-align:center;padding:60px 24px}
+.processing .spinner{display:inline-block;width:48px;height:48px;border:4px solid var(--g1-border);border-top-color:var(--g1-red);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.processing h2{font-size:24px;color:var(--g1-black);margin-bottom:12px;font-weight:900}
+.processing .step{font-size:14px;color:var(--g1-muted);margin:6px 0;opacity:0;animation:stepIn .5s forwards}
+.processing .step:nth-child(3){animation-delay:.3s}
+.processing .step:nth-child(4){animation-delay:1.2s}
+.processing .step:nth-child(5){animation-delay:2.1s}
+.processing .step:nth-child(6){animation-delay:3s}
+@keyframes stepIn{to{opacity:1}}
+
+.g1-footer{background:var(--g1-black);color:#fff;padding:18px 24px;text-align:center;font-size:12px}
+.g1-footer .brand{font-family:'Arial Black',Arial,sans-serif;font-size:20px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;margin-bottom:4px}
+.g1-footer a{color:#FFCFCB;text-decoration:none}
+.g1-footer .partner{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;opacity:.95;line-height:1.7}
+.g1-footer .partner strong{color:var(--g1-red);font-weight:900}
+
+/* INTRO SCREEN (video embed) */
+.intro-wrap{max-width:780px;margin:0 auto}
+.intro-tag{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:12px}
+.intro-title{font-family:Arial,Helvetica,sans-serif;font-size:28px;line-height:1.22;color:var(--g1-black);margin-bottom:8px;font-weight:900;letter-spacing:-.3px}
+.intro-title .pop{color:var(--g1-red)}
+.intro-byline{font-size:13px;color:var(--g1-muted);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--g1-border);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.intro-byline strong{color:var(--g1-black);font-weight:700}
+.intro-byline .yt-badge{background:#FF0000;color:#fff;padding:3px 9px;font-size:10px;font-weight:900;letter-spacing:.5px}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;margin-bottom:18px}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.intro-highlights{background:var(--g1-light);padding:18px 20px;border-left:4px solid var(--g1-red);margin:18px 0;font-size:14px}
+.intro-highlights .ih-h{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--g1-red);margin-bottom:10px}
+.intro-highlights ul{list-style:none;padding:0;margin:0}
+.intro-highlights li{padding-left:22px;position:relative;margin-bottom:7px;line-height:1.5;color:var(--g1-text)}
+.intro-highlights li::before{content:"✓";position:absolute;left:0;top:0;color:var(--g1-red);font-weight:900}
+.intro-ctas{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.intro-cta-primary{display:block;background:var(--g1-red);color:#fff;font-weight:900;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:18px;border:none;cursor:pointer;text-align:center;font-family:inherit;transition:background .15s}
+.intro-cta-primary:hover{background:var(--g1-red-h)}
+.intro-skip{text-align:center;font-size:12px;color:var(--g1-muted);background:none;border:none;cursor:pointer;font-family:inherit;padding:10px;text-decoration:underline}
+.intro-skip:hover{color:var(--g1-red)}
+@media(max-width:600px){.intro-title{font-size:22px}}
+
+@media(max-width:600px){
+.g1-topbar{padding:5px 12px;font-size:10px}
+.g1-header-main{padding:10px 14px}.g1-logo{font-size:28px}.g1-section-tag{font-size:12px;margin-left:10px;padding-left:10px}
+.q-title{font-size:22px}.container{padding:24px 16px}
+.progress-wrap{padding:11px 14px;font-size:10px}
+}
+
+/* TEAM 2-CARDS BIGGER (with real photos) */
+.g1-team-grid-2{grid-template-columns:1fr 1fr !important;gap:16px}
+.g1-team-card-big{padding:22px !important;flex-direction:column !important;gap:14px !important;align-items:center !important;text-align:center}
+.g1-team-photo-big{flex-shrink:0;width:130px;height:130px;border-radius:50%;overflow:hidden;background:#fff;border:3px solid var(--g1-red);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.g1-team-photo-big img{width:100%;height:100%;object-fit:cover;display:block}
+.g1-team-card-big .g1-team-name{font-size:17px !important;text-align:center}
+.g1-team-card-big .g1-team-role{text-align:center;margin-bottom:10px !important}
+.g1-team-card-big .g1-team-bio{font-size:13px !important;text-align:left}
+@media(max-width:600px){.g1-team-grid-2{grid-template-columns:1fr !important}.g1-team-photo-big{width:110px;height:110px}}
+
+/* BIGGER BOTTOM CTA */
+.g1-cta-block{padding:38px 26px !important}
+.g1-cta-block h3{font-size:28px !important;margin-bottom:14px !important}
+.g1-cta-block .cta-btn{font-size:17px !important;padding:20px 38px !important;display:inline-block;animation:pulseCta 2s ease-in-out infinite}
+@keyframes pulseCta{0%,100%{transform:scale(1);box-shadow:0 4px 14px rgba(196,23,12,.25)}50%{transform:scale(1.03);box-shadow:0 6px 22px rgba(196,23,12,.4)}}
+
+/* WhatsApp floating button (sticky bottom-right) */
+.wa-float{position:fixed;bottom:18px;right:18px;z-index:1500;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:all .2s;font-size:30px;font-weight:900}
+.wa-float:hover{background:#1FB855;transform:scale(1.1);box-shadow:0 8px 26px rgba(37,211,102,.6)}
+.wa-float .wa-pulse{position:absolute;width:60px;height:60px;border-radius:50%;background:#25D366;opacity:.55;animation:waPulse 2s ease-in-out infinite;z-index:-1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.8);opacity:0}}
+@media(max-width:600px){.wa-float{bottom:14px;right:14px;width:52px;height:52px;font-size:26px}}
+
+
+.intro-cta-big{padding:22px !important;font-size:17px !important;animation:pulseCta 2s ease-in-out infinite;box-shadow:0 4px 14px rgba(196,23,12,.25)}
+@keyframes pulseCta{0%,100%{transform:scale(1);box-shadow:0 4px 14px rgba(196,23,12,.25)}50%{transform:scale(1.03);box-shadow:0 6px 22px rgba(196,23,12,.4)}}
+
+
+/* TEAM PHOTOS — sized down + mobile-safe */
+.g1-team-photo-big{width:90px !important;height:90px !important;border-width:2px !important}
+.g1-team-card-big{padding:18px 16px !important;gap:10px !important}
+.g1-team-card-big .g1-team-name{font-size:15px !important;margin-top:8px}
+.g1-team-card-big .g1-team-role{font-size:10px !important}
+.g1-team-card-big .g1-team-bio{font-size:12.5px !important;text-align:left;line-height:1.5}
+@media(max-width:600px){
+  .g1-team-photo-big{width:80px !important;height:80px !important}
+  .g1-team-card-big{padding:16px 14px !important}
+  .g1-team-card-big .g1-team-bio{font-size:12px !important}
+  .g1-team-grid-2{grid-template-columns:1fr !important}
+}
+
+/* GLOBAL MOBILE POLISH */
+img{max-width:100%;height:auto}
+@media(max-width:600px){
+  body{font-size:15px}
+  h1,h2,h3{word-wrap:break-word;hyphens:auto}
+  .g1-cta-block{padding:24px 16px !important}
+  .g1-cta-block h3{font-size:22px !important;line-height:1.25}
+  .g1-cta-block .cta-btn{font-size:14px !important;padding:16px 22px !important;display:block;width:100%}
+  .g1-mid-cta{padding:22px 16px !important}
+  .g1-mid-cta h4{font-size:17px !important}
+  .g1-mid-cta a{display:block;width:100%;padding:14px !important;font-size:13px !important}
+  .g1-cta-inline{flex-direction:column;align-items:stretch}
+  .g1-cta-inline a{width:100% !important;text-align:center}
+  /* Sticky bar mobile */
+  .g1-sticky-bar{padding:9px 12px !important;font-size:11px !important;flex-wrap:wrap;gap:8px !important}
+  .g1-sticky-bar .stxt{font-size:11px !important;text-align:center;width:100%}
+  .g1-sticky-bar .sbtn{font-size:11px !important;padding:7px 14px !important}
+  /* Floating WhatsApp adjusted on mobile */
+  .wa-float{bottom:10px !important;right:10px !important;width:50px !important;height:50px !important;font-size:24px !important}
+  .wa-float .wa-pulse{width:50px !important;height:50px !important}
+  /* Body padding so sticky CTAs don't cover content */
+  body{padding-bottom:80px}
+  /* Tables responsive */
+  .compare-table,.cmp{font-size:12px}
+  .compare-table th,.compare-table td,.cmp th,.cmp td{padding:8px 6px}
+  /* Figcaptions readable */
+  .g1-figure figcaption{font-size:11px;padding:8px 10px 12px;line-height:1.4}
+  /* Container padding tighter */
+  .g1-container{padding:20px 14px !important}
+  /* Header more compact */
+  .g1-header-main{padding:8px 12px !important}
+  .g1-logo{font-size:26px !important}
+  .g1-section-tag{font-size:11px !important;margin-left:8px !important;padding-left:8px !important}
+  .g1-header-right{display:none !important}
+  /* Breadcrumb mobile */
+  .g1-breadcrumb{padding:6px 12px !important;font-size:10px !important;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  /* Topbar mobile */
+  .g1-topbar{padding:5px 10px !important;font-size:10px !important}
+  /* Kicker mobile */
+  .g1-kicker{font-size:10px !important;padding:3px 9px !important;margin-bottom:10px !important}
+  /* Headline mobile (advertorials) */
+  h1.g1-headline{font-size:23px !important;line-height:1.2 !important}
+  .g1-subhead{font-size:15px !important;line-height:1.45 !important}
+  .g1-body p.lead{font-size:16px !important;line-height:1.5 !important}
+  .g1-body h2{font-size:18px !important;line-height:1.3 !important}
+  .g1-body p{font-size:15px !important;line-height:1.6 !important}
+  /* Pullquote mobile */
+  .g1-pullquote{font-size:17px !important;padding:12px 0 12px 14px !important;line-height:1.35 !important}
+  /* Databox mobile */
+  .g1-databox{padding:16px !important;margin:20px 0 !important}
+  .g1-databox .row{flex-direction:column;gap:4px !important;padding:8px 0 !important;align-items:flex-start !important}
+  .g1-databox .row .desc{text-align:left !important;max-width:100% !important;font-size:12px !important}
+  .g1-databox .row .num{font-size:18px !important}
+  /* Case box mobile */
+  .g1-case{padding:18px 16px !important}
+  .g1-case h3{font-size:16px !important}
+  .g1-case .quote{font-size:14px !important;padding-left:12px !important}
+  .g1-case p{font-size:13px !important}
+  /* Bonus tease mobile */
+  .g1-bonus{padding:16px !important}
+  .g1-bonus h4{font-size:15px !important}
+  .g1-bonus ul{font-size:13px !important}
+  /* Disclosure mobile */
+  .g1-disclosure{padding:12px 14px !important;font-size:11px !important}
+  /* Related mobile */
+  .g1-related-grid{grid-template-columns:1fr 1fr !important;gap:8px !important}
+  .g1-related-card img{height:80px !important}
+  .g1-related-card .t{font-size:12px !important;line-height:1.3 !important}
+  .g1-related-card .k{font-size:9px !important}
+  /* Building grid (advertorial 2) mobile */
+  .bldg-grid{grid-template-columns:1fr !important;gap:10px !important}
+  .bldg-card img{height:160px !important}
+  /* Footer mobile */
+  .g1-footer{padding:18px 14px !important;font-size:11px !important}
+  .g1-footer .brand{font-size:18px !important}
+  .g1-footer .partner{font-size:10px !important}
+}
+
+.intro-skip-top{font-weight:700 !important;color:var(--g1-red) !important;font-size:14px !important;padding:14px !important;background:#FFF8F7 !important;border:1px solid #F5C9C5 !important;text-decoration:none !important;text-align:center;display:block;margin-bottom:4px}
+</style>
+</head>
+<body>
+
+<div class="g1-topbar"><div>Edição Digital — <span class="js-date-weekday">Hoje</span></div><div></div></div>
+<div class="g1-header-main"><div class="g1-logo">P1</div><div class="g1-section-tag">Diagnóstico Patrimônio Atlântico</div></div>
+
+<div class="progress-wrap">
+  <span id="progLabel">Pergunta 1 de 7</span>
+  <div class="progress-track"><div class="progress-fill" id="progFill"></div></div>
+  <span>~ 15s</span>
+</div>
+
+<div class="container">
+
+  <div class="question-wrap active" data-q="1">
+    <span class="q-kicker">01 · Perfil patrimonial</span>
+    <h2 class="q-title">Qual a faixa do seu patrimônio líquido total?</h2>
+    <p class="q-sub">Considerando imóveis, investimentos, participações societárias e reservas, menos dívidas.</p>
+    <button class="option" data-score="8" data-q="1" data-val="2-5"><span class="opt-label">R$ 2 a 5 milhões</span><span class="opt-desc">Estou no patamar inicial de internacionalização</span></button>
+    <button class="option" data-score="15" data-q="1" data-val="5-10"><span class="opt-label">R$ 5 a 10 milhões</span><span class="opt-desc">Já comecei a estruturar parte do patrimônio fora</span></button>
+    <button class="option" data-score="20" data-q="1" data-val="10-25"><span class="opt-label">R$ 10 a 25 milhões</span><span class="opt-desc">Tenho estrutura patrimonial relevante a proteger</span></button>
+    <button class="option" data-score="25" data-q="1" data-val="25+"><span class="opt-label">Acima de R$ 25 milhões</span><span class="opt-desc">Foco em estruturação de family office</span></button>
+  </div>
+  <div class="question-wrap" data-q="2">
+    <span class="q-kicker">02 · Timeline</span>
+    <h2 class="q-title">Em quanto tempo você pretende fazer um movimento concreto?</h2>
+    <p class="q-sub">Aquisição de imóvel, estruturação tributária ou abertura de operação.</p>
+    <button class="option" data-score="25" data-q="2" data-val="3-6m"><span class="opt-label">Nos próximos 3 a 6 meses</span><span class="opt-desc">Tenho urgência, recurso disponível</span></button>
+    <button class="option" data-score="18" data-q="2" data-val="6-12m"><span class="opt-label">Entre 6 e 12 meses</span><span class="opt-desc">Estou planejando ativamente</span></button>
+    <button class="option" data-score="10" data-q="2" data-val="12-24m"><span class="opt-label">Entre 12 e 24 meses</span><span class="opt-desc">Em fase de estudo e estruturação</span></button>
+    <button class="option" data-score="3" data-q="2" data-val="estudando"><span class="opt-label">Apenas pesquisando, sem timeline</span><span class="opt-desc">Quero entender o caminho antes de decidir</span></button>
+  </div>
+
+  <div class="question-wrap" data-q="3">
+    <span class="q-kicker">03 · Motivação principal</span>
+    <h2 class="q-title">Qual a sua motivação dominante?</h2>
+    <p class="q-sub">Pode ter mais de uma — escolha a mais importante hoje.</p>
+    <button class="option" data-score="0" data-q="3" data-val="blindagem"><span class="opt-label">Blindagem patrimonial</span><span class="opt-desc">Proteger capital, dolarizar, sucessão</span></button>
+    <button class="option" data-score="0" data-q="3" data-val="renda"><span class="opt-label">Renda passiva em dólar</span><span class="opt-desc">Aluguel temporada Miami pra gerar fluxo USD</span></button>
+    <button class="option" data-score="0" data-q="3" data-val="lifestyle"><span class="opt-label">Base familiar / lifestyle</span><span class="opt-desc">Casa pra férias, base pros filhos estudarem fora</span></button>
+    <button class="option" data-score="0" data-q="3" data-val="status"><span class="opt-label">Pertencimento ao círculo internacional</span><span class="opt-desc">Network, eventos, comunidade brasileira Miami</span></button>
+    <button class="option" data-score="0" data-q="3" data-val="visto"><span class="opt-label">Caminho para visto americano (EB-5, E-2)</span><span class="opt-desc">Investimento como veículo para residência</span></button>
+  </div>
+  <div class="question-wrap" data-q="4">
+    <span class="q-kicker">04 · Acesso ao relatório</span>
+    <h2 class="q-title">Onde enviamos seu relatório personalizado?</h2>
+    <p class="q-sub">Seu Diagnóstico Patrimônio Atlântico em PDF, com análise das 3 variáveis e indicações específicas pro seu perfil.</p>
+    <form id="leadForm">
+      <div class="form-field"><label for="name">Nome completo</label><input type="text" id="name" name="name" required autocomplete="name" placeholder="Como devemos te chamar"></div>
+      <div class="form-field"><label for="email">Email profissional</label><input type="email" id="email" name="email" required autocomplete="email" placeholder="seu@email.com"></div>
+      <div class="form-field"><label for="whatsapp">WhatsApp com DDD</label><input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" placeholder="(11) 99999-9999"><div class="hint">Usado apenas para envio do relatório e agendamento. Não enviamos spam.</div></div>
+      <button type="submit" class="submit-btn" id="submitBtn">Receber meu relatório →</button>
+      <div class="legal">Ao continuar, você concorda em receber o relatório personalizado e comunicações pontuais do Heritage Signal. LGPD compliant. Cancelamento a qualquer momento.</div>
+    </form>
+  </div>
+
+  <div class="question-wrap" data-q="5">
+    <div class="processing">
+      <div class="spinner"></div>
+      <h2>Analisando seu perfil patrimonial...</h2>
+      <div class="step">→ Calculando Heritage Score com base em 7 variáveis</div>
+      <div class="step">→ Cruzando seu perfil com 47 imóveis Miami monitorados</div>
+      <div class="step">→ Identificando edifícios alinhados ao seu ticket</div>
+      <div class="step">→ Gerando seu relatório personalizado</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="g1-footer">
+  <div class="brand">P1</div>
+  © 2026 Heritage Signal · Patrimônio Atlântico
+  <div class="partner">
+    Corretor parceiro credenciado Miami-Dade:<br>
+    <strong>Daniella &amp; André Cunha Lima · Realtors®</strong><br>
+    <a href="corretor.html">Perfil</a> · <a href="https://www.andrecunhalima.com" target="_blank">Site oficial</a> · <a href="tel:+13059048054">+1 (305) 904-8054</a>
+  </div>
+  <div style="margin-top:6px;opacity:.7;font-size:11px"><a href="#">Privacidade</a> · <a href="#">Termos</a></div>
+</div>
+
+<script>
+(function(){
+  var answers={};var totalScore=0;var quizStarted=false;var TOTAL_QS=3;
+  var urlParams=new URLSearchParams(window.location.search);
+  var sourceAngle=urlParams.get('angle')||urlParams.get('utm_campaign')||'unknown';
+
+  function updateProgress(q){
+    var pct=Math.min(100,(q/TOTAL_QS)*100);
+    document.getElementById('progFill').style.width=pct+'%';
+    document.getElementById('progLabel').textContent=q<=TOTAL_QS?'Pergunta '+q+' de '+TOTAL_QS:'Finalizando…';
+  }
+
+  function goToQ(q){
+    document.querySelectorAll('.question-wrap').forEach(function(el){el.classList.remove('active')});
+    var next=document.querySelector('.question-wrap[data-q="'+q+'"]');
+    if(next){
+      next.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+      updateProgress(q);
+      if(window.fbq)fbq('trackCustom','QuizQuestion',{question:q});
+      if(window.clarity)clarity('event','quiz_question_'+q);
+      if(q===4){
+        if(window.fbq)fbq('trackCustom','QuizCompleted',{angle:sourceAngle,score:totalScore});
+        if(window.clarity)clarity('event','quiz_completed');
+      }
+    }
+  }
+
+  document.querySelectorAll('.option').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var q=parseInt(this.getAttribute('data-q'),10);
+      var val=this.getAttribute('data-val');
+      var score=parseInt(this.getAttribute('data-score'),10)||0;
+      if(!quizStarted){
+        quizStarted=true;
+        if(window.fbq)fbq('trackCustom','QuizStarted',{angle:sourceAngle});
+        if(window.clarity)clarity('event','quiz_started');
+      }
+      answers['q'+q]=val;
+      totalScore+=score;
+      btn.parentElement.querySelectorAll('.option').forEach(function(o){o.classList.remove('selected')});
+      btn.classList.add('selected');
+      setTimeout(function(){goToQ(q+1)},250);
+    });
+  });
+
+  document.getElementById('leadForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=document.getElementById('submitBtn');
+    btn.disabled=true;btn.textContent='Processando…';
+    answers.name=document.getElementById('name').value.trim();
+    answers.email=document.getElementById('email').value.trim();
+    answers.whatsapp=document.getElementById('whatsapp').value.trim();
+    // Inferir Q4 Faixa de Investimento a partir de Q1 Patrimônio (mapeamento 1:1)
+    var q1ToQ4={'2-5':'800-1200','5-10':'1200-2000','10-25':'2000-5000','25+':'5000+'};
+    var q4Scores={'800-1200':10,'1200-2000':15,'2000-5000':18,'5000+':20};
+    answers.q4=q1ToQ4[answers.q1]||'800-1200';
+    totalScore+=q4Scores[answers.q4]||10;
+    answers.score=totalScore;
+    answers.angle=sourceAngle;
+    var tier;
+    if(totalScore>=60)tier=1;else if(totalScore>=35)tier=2;else tier=3;
+    answers.tier=tier;
+    if(window.fbq){fbq('track','Lead',{tier:tier,score:totalScore,angle:sourceAngle});fbq('trackCustom','Tier'+tier+'Qualified')}
+    if(window.clarity){clarity('event','tier_'+tier+'_qualified');clarity('set','tier',String(tier))}
+    var formEndpoint='FORM_ENDPOINT';
+    var leadFallbackEmail='andre@andrecunhalima.com';
+    if(formEndpoint&&formEndpoint!=='FORM_ENDPOINT'){
+      // Real endpoint configured (Formspree/Web3Forms/Make.com webhook)
+      fetch(formEndpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(answers)
+      }).catch(function(){
+        // Fallback: open mailto: with form data
+        var body=encodeURIComponent('Novo lead Heritage Signal:\n\n'+JSON.stringify(answers,null,2));
+        window.open('mailto:'+leadFallbackEmail+'?subject=Lead%20Heritage%20Signal&body='+body);
+      });
+    }else{
+      // No endpoint yet — save to localStorage for debugging and offer mailto backup
+      try{localStorage.setItem('hs_lead_'+Date.now(),JSON.stringify(answers))}catch(e){}
+      console.warn('FORM_ENDPOINT not configured — lead saved to localStorage. Configure Formspree to send leads to email.');
+    }
+    goToQ(5);
+    setTimeout(function(){
+      var resultParams=new URLSearchParams();
+      resultParams.set('tier',tier);
+      resultParams.set('score',totalScore);
+      resultParams.set('angle',sourceAngle);
+      resultParams.set('motivation',answers.q4||'');
+      resultParams.set('name',answers.name.split(' ')[0]);
+      resultParams.set('channel',answers.q7||'whatsapp');
+      window.location.href='result.html?'+resultParams.toString();
+    },4200);
+  });
+
+  updateProgress(1);
+})();
+</script>
+
+
+<script>
+/* Dynamic date — always shows today's date */
+(function(){
+  var d=new Date();
+  var M=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  var W=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+  var dd=String(d.getDate()).padStart(2,'0');
+  var mm=String(d.getMonth()+1).padStart(2,'0');
+  var yy=d.getFullYear();
+  var hh=String(d.getHours()).padStart(2,'0');
+  var mn=String(d.getMinutes()).padStart(2,'0');
+  // Updated time = a few hours before current
+  var ux=new Date(d.getTime()-Math.floor(Math.random()*4+2)*3600000);
+  var uhh=String(ux.getHours()).padStart(2,'0');
+  var umn=String(ux.getMinutes()).padStart(2,'0');
+  var shortD=dd+'/'+mm+'/'+yy;
+  var fullD=W[d.getDay()].charAt(0).toUpperCase()+W[d.getDay()].slice(1)+', '+d.getDate()+' de '+M[d.getMonth()]+' de '+yy;
+  var bylineD=shortD+' '+uhh+'h'+umn+' — Atualizada às '+hh+'h'+mn;
+  document.querySelectorAll('.js-date-short').forEach(function(e){e.textContent=shortD});
+  document.querySelectorAll('.js-date-weekday').forEach(function(e){e.textContent=fullD});
+  document.querySelectorAll('.js-date-byline').forEach(function(e){e.textContent=bylineD});
+  document.querySelectorAll('.js-date-month').forEach(function(e){e.textContent=M[d.getMonth()].charAt(0).toUpperCase()+M[d.getMonth()].slice(1)+' de '+yy});
+})();
+</script>
+</body>
+</html>

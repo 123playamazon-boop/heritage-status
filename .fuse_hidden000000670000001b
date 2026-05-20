@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imóveis disponíveis em Miami · Portal Patrimônio Atlântico</title>
+<meta name="description" content="Busca de imóveis luxury em Miami para compradores brasileiros. Filtros por bairro, preço, quartos. Listagens atualizadas em parceria com miamiresidence.com.">
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','META_PIXEL_ID');fbq('track','PageView');fbq('trackCustom','PortalView');
+</script>
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","CLARITY_ID");
+window.clarity&&clarity('set','page','portal_imoveis');window.clarity&&clarity('event','portal_view');
+</script>
+
+<style>
+:root{--g1-red:#C4170C;--g1-red-h:#A0120A;--g1-black:#1A1A1A;--g1-text:#333;--g1-muted:#717171;--g1-light:#F2F2F2;--g1-border:#E0E0E0;--g1-link:#0066B3;--g1-gold:#C9A14A;--g1-green:#1F6B3E}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--g1-text);background:#F8F8F8;line-height:1.5;font-size:16px}
+
+/* G1 SHARED */
+.g1-topbar{background:var(--g1-black);color:#fff;padding:6px 16px;font-size:11px;display:flex;justify-content:space-between;align-items:center}
+.g1-topbar .right a{color:#fff;text-decoration:none;margin-left:14px;opacity:.85;font-size:11px}
+.g1-header-main{display:flex;align-items:center;padding:12px 24px;border-bottom:4px solid var(--g1-red);background:#fff}
+.g1-logo{font-family:'Arial Black',Arial,sans-serif;font-size:36px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;line-height:1}
+.g1-section-tag{margin-left:14px;padding-left:14px;border-left:1px solid var(--g1-border);font-size:15px;font-weight:700;color:var(--g1-black);line-height:1;text-transform:uppercase;letter-spacing:.5px}
+.g1-header-right{margin-left:auto;display:flex;gap:14px;font-size:12px;color:var(--g1-muted)}
+.g1-breadcrumb{background:var(--g1-light);padding:8px 24px;font-size:12px;border-bottom:1px solid var(--g1-border);color:var(--g1-muted)}
+.g1-breadcrumb a{color:var(--g1-link);text-decoration:none}
+
+/* STICKY CTA */
+.sticky-bar{position:fixed;top:0;left:0;right:0;background:var(--g1-red);color:#fff;padding:11px 16px;display:flex;align-items:center;justify-content:center;gap:14px;transform:translateY(-110%);transition:transform .3s ease;z-index:1000;font-size:13px;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.sticky-bar.visible{transform:translateY(0)}
+.sticky-bar .stxt{font-weight:600}
+.sticky-bar .sbtn{background:#fff;color:var(--g1-red);padding:8px 16px;font-weight:900;font-size:12px;text-transform:uppercase;text-decoration:none;letter-spacing:1px;white-space:nowrap}
+
+/* HERO */
+.portal-hero{background:#fff;padding:28px 24px 24px;border-bottom:1px solid var(--g1-border)}
+.portal-hero-inner{max-width:1200px;margin:0 auto}
+.portal-hero .kicker{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:12px}
+.portal-hero h1{font-family:Arial,Helvetica,sans-serif;font-size:32px;line-height:1.2;color:var(--g1-black);margin-bottom:10px;font-weight:900;letter-spacing:-.3px}
+.portal-hero .sub{font-size:16px;color:var(--g1-text);max-width:780px;line-height:1.5;margin-bottom:14px}
+.portal-hero .stats{display:flex;gap:24px;font-size:13px;color:var(--g1-muted);flex-wrap:wrap}
+.portal-hero .stats span{display:inline-flex;align-items:center;gap:6px}
+.portal-hero .stats strong{color:var(--g1-black);font-weight:900}
+
+/* MAIN LAYOUT */
+.portal-main{max-width:1200px;margin:0 auto;padding:24px;display:grid;grid-template-columns:280px 1fr;gap:24px}
+
+/* SIDEBAR FILTERS */
+.filters{background:#fff;border:1px solid var(--g1-border);padding:20px;position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow-y:auto}
+.filters h3{font-size:14px;font-weight:900;color:var(--g1-black);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--g1-red)}
+.filter-group{margin-bottom:22px}
+.filter-group h4{font-size:11px;font-weight:900;color:var(--g1-red);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.filter-checks{display:flex;flex-direction:column;gap:6px}
+.filter-checks label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--g1-text);cursor:pointer;padding:5px 0}
+.filter-checks input[type="checkbox"]{accent-color:var(--g1-red);cursor:pointer;width:16px;height:16px}
+.filter-checks label .count{margin-left:auto;font-size:11px;color:var(--g1-muted);background:var(--g1-light);padding:2px 7px;font-weight:700}
+.filter-checks label:hover{color:var(--g1-red)}
+.filter-checks input:checked + span{font-weight:900;color:var(--g1-red)}
+.filter-radio{display:flex;flex-direction:column;gap:6px}
+.filter-radio label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--g1-text);cursor:pointer;padding:5px 0}
+.filter-radio input[type="radio"]{accent-color:var(--g1-red);cursor:pointer;width:16px;height:16px}
+.filter-reset{display:block;width:100%;background:var(--g1-light);color:var(--g1-text);border:1px solid var(--g1-border);padding:10px;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-align:center;font-family:inherit;margin-top:10px}
+.filter-reset:hover{background:var(--g1-red);color:#fff;border-color:var(--g1-red)}
+
+/* RESULTS HEADER */
+.results-header{background:#fff;border:1px solid var(--g1-border);padding:14px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.results-count{font-size:14px;color:var(--g1-text)}
+.results-count strong{color:var(--g1-red);font-weight:900}
+.results-sort{display:flex;align-items:center;gap:10px;font-size:13px}
+.results-sort select{padding:7px 10px;border:1px solid var(--g1-border);background:#fff;font-family:inherit;font-size:13px;cursor:pointer}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.card{background:#fff;border:1px solid var(--g1-border);overflow:hidden;display:flex;flex-direction:column;transition:all .2s}
+.card:hover{box-shadow:-4px 4px 0 var(--g1-red);transform:translate(2px,-2px)}
+.card .img-wrap{position:relative;width:100%;height:200px;overflow:hidden;background:var(--g1-light);cursor:pointer}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.card:hover img{transform:scale(1.04)}
+.card .badges{position:absolute;top:8px;left:8px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 100px)}
+.card .badge{background:var(--g1-red);color:#fff;font-size:9px;padding:3px 7px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
+.card .badge.off{background:var(--g1-black)}
+.card .badge.verif{background:var(--g1-green)}
+.card .badge.featured{background:var(--g1-gold)}
+.card .fav{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.9);width:32px;height:32px;border:none;cursor:pointer;font-size:16px;color:var(--g1-muted);display:flex;align-items:center;justify-content:center;transition:all .15s}
+.card .fav:hover,.card .fav.active{background:var(--g1-red);color:#fff}
+.card .meta{padding:14px;display:flex;flex-direction:column;flex:1}
+.card .bldg{font-size:11px;color:var(--g1-red);font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.card .title{font-size:15px;font-weight:900;color:var(--g1-black);line-height:1.3;margin-bottom:6px}
+.card .loc{font-size:12px;color:var(--g1-muted);margin-bottom:10px}
+.card .specs{display:flex;gap:14px;margin-bottom:10px;font-size:12px;color:var(--g1-text);border-top:1px dotted var(--g1-border);border-bottom:1px dotted var(--g1-border);padding:9px 0}
+.card .specs span{display:flex;flex-direction:column}
+.card .specs strong{font-size:14px;font-weight:900;color:var(--g1-black)}
+.card .specs em{font-size:10px;color:var(--g1-muted);font-style:normal;text-transform:uppercase;letter-spacing:.5px}
+.card .price{font-size:20px;font-weight:900;color:var(--g1-black);margin-bottom:3px;letter-spacing:-.3px}
+.card .pps{font-size:11px;color:var(--g1-muted);margin-bottom:12px}
+.card .actions{margin-top:auto;display:flex;gap:6px}
+.card .actions a{flex:1;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;padding:10px 8px;text-align:center;text-decoration:none;transition:all .15s}
+.card .actions .btn-primary{background:var(--g1-red);color:#fff}
+.card .actions .btn-primary:hover{background:var(--g1-red-h)}
+.card .actions .btn-secondary{background:var(--g1-light);color:var(--g1-black);border:1px solid var(--g1-border)}
+.card .actions .btn-secondary:hover{background:var(--g1-black);color:#fff;border-color:var(--g1-black)}
+
+/* EMPTY STATE */
+.empty{background:#fff;border:1px solid var(--g1-border);padding:60px 24px;text-align:center}
+.empty h3{font-size:20px;color:var(--g1-black);margin-bottom:8px;font-weight:900}
+.empty p{font-size:14px;color:var(--g1-muted);margin-bottom:16px}
+.empty button{background:var(--g1-red);color:#fff;border:none;padding:12px 22px;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit;font-size:12px}
+
+/* PAGINATION */
+.pagination{display:flex;justify-content:center;align-items:center;gap:6px;margin:20px 0 30px}
+.pagination button{background:#fff;color:var(--g1-text);border:1px solid var(--g1-border);padding:10px 14px;font-weight:900;cursor:pointer;font-family:inherit;font-size:13px;min-width:40px}
+.pagination button:hover{background:var(--g1-light);border-color:var(--g1-red);color:var(--g1-red)}
+.pagination button.active{background:var(--g1-red);color:#fff;border-color:var(--g1-red)}
+.pagination button:disabled{opacity:.4;cursor:not-allowed}
+
+/* CTA BANNER */
+.cta-banner{background:var(--g1-red);color:#fff;padding:28px;margin:24px 0;text-align:center}
+.cta-banner h3{font-size:22px;font-weight:900;margin-bottom:8px;line-height:1.3}
+.cta-banner p{font-size:14px;opacity:.92;margin-bottom:16px}
+.cta-banner a{display:inline-block;background:#fff;color:var(--g1-red);padding:14px 28px;font-weight:900;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-size:13px;margin:0 6px 6px 0}
+.cta-banner a.alt{background:transparent;color:#fff;border:2px solid #fff}
+.cta-banner a.alt:hover{background:#fff;color:var(--g1-red)}
+
+/* MODAL */
+.modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:30px 16px;overflow-y:auto}
+.modal.open{display:flex}
+.modal-card{background:#fff;max-width:780px;width:100%;border-top:6px solid var(--g1-red);position:relative;animation:slideIn .25s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.modal-card .close{position:absolute;top:10px;right:14px;background:transparent;border:none;font-size:30px;color:var(--g1-black);cursor:pointer;font-family:Arial;line-height:1;z-index:10}
+.modal-card .close:hover{color:var(--g1-red)}
+.modal-img{width:100%;height:340px;object-fit:cover;display:block;background:var(--g1-light)}
+.modal-body{padding:24px}
+.modal-body .mb-tag{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 10px;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.modal-body h2{font-size:24px;font-weight:900;color:var(--g1-black);line-height:1.3;margin-bottom:6px}
+.modal-body .mb-loc{font-size:14px;color:var(--g1-muted);margin-bottom:18px}
+.modal-body .mb-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;background:var(--g1-light);padding:14px;margin-bottom:18px}
+.modal-body .mb-specs div{text-align:center}
+.modal-body .mb-specs strong{display:block;font-size:18px;font-weight:900;color:var(--g1-black)}
+.modal-body .mb-specs em{font-size:11px;color:var(--g1-muted);font-style:normal;text-transform:uppercase}
+.modal-body .mb-price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--g1-red)}
+.modal-body .mb-price{font-size:32px;font-weight:900;color:var(--g1-black);letter-spacing:-.5px}
+.modal-body .mb-pps{font-size:13px;color:var(--g1-muted)}
+.modal-body .mb-desc{font-size:14px;color:var(--g1-text);line-height:1.6;margin-bottom:18px}
+.modal-body .mb-features{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.modal-body .mb-features span{background:var(--g1-light);color:var(--g1-text);padding:6px 11px;font-size:12px;font-weight:700}
+.modal-body .mb-actions{display:flex;gap:10px;flex-wrap:wrap}
+.modal-body .mb-actions a{flex:1;min-width:180px;padding:14px;text-align:center;font-weight:900;text-decoration:none;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.modal-body .btn-cal{background:var(--g1-red);color:#fff}
+.modal-body .btn-cal:hover{background:var(--g1-red-h)}
+.modal-body .btn-whats{background:#25D366;color:#fff}
+.modal-body .btn-whats:hover{background:#1FB855}
+.modal-body .mb-source{font-size:11px;color:var(--g1-muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--g1-border);line-height:1.5}
+
+/* FOOTER */
+.g1-footer{background:var(--g1-black);color:#fff;padding:24px;text-align:center;font-size:12px;margin-top:32px}
+.g1-footer .brand{font-family:'Arial Black',Arial,sans-serif;font-size:22px;font-weight:900;color:var(--g1-red);letter-spacing:-1.5px;margin-bottom:6px}
+.g1-footer a{color:#FFCFCB;text-decoration:none}
+.g1-footer .partner{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;opacity:.95;line-height:1.7}
+.g1-footer .partner strong{color:var(--g1-red);font-weight:900}
+
+/* IDX COMPLETE SECTION (link to broker's IDX) */
+.idx-section{background:#fff;border-top:6px solid var(--g1-red);padding:30px 24px;margin:32px auto 0;max-width:1200px}
+.idx-header{margin-bottom:20px}
+.idx-header .kicker{display:inline-block;background:var(--g1-red);color:#fff;padding:4px 11px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px;margin-bottom:10px}
+.idx-header h2{font-size:26px;font-weight:900;color:var(--g1-black);line-height:1.25;margin-bottom:10px;letter-spacing:-.3px}
+.idx-header p{font-size:14px;color:var(--g1-text);line-height:1.6;max-width:780px}
+.idx-header p strong{color:var(--g1-red);font-weight:900}
+.idx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.idx-card{background:var(--g1-light);border:1px solid var(--g1-border);padding:16px;text-decoration:none;color:inherit;transition:all .15s;display:flex;flex-direction:column;justify-content:space-between;min-height:120px}
+.idx-card:hover{background:var(--g1-red);color:#fff;border-color:var(--g1-red);transform:translateY(-2px);box-shadow:0 4px 14px rgba(196,23,12,.25)}
+.idx-card:hover .ic-c,.idx-card:hover .ic-cta{color:rgba(255,255,255,.85)}
+.idx-card .ic-h{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;line-height:1.3}
+.idx-card .ic-c{font-size:11px;color:var(--g1-muted);margin-bottom:8px;transition:color .15s}
+.idx-card .ic-n{font-size:22px;font-weight:900;color:var(--g1-red);letter-spacing:-.3px;line-height:1;transition:color .15s}
+.idx-card:hover .ic-n{color:#fff}
+.idx-card .ic-label{font-size:10px;color:var(--g1-muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;transition:color .15s}
+.idx-card .ic-cta{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--g1-red);font-weight:900;margin-top:10px;transition:color .15s}
+.idx-card:hover .ic-cta{color:#fff}
+.idx-footer{margin-top:20px;padding:16px 18px;background:var(--g1-light);font-size:13px;color:var(--g1-text);line-height:1.55;text-align:center;border-left:4px solid var(--g1-red)}
+.idx-footer strong{color:var(--g1-red)}
+.idx-footer .idx-cta-btn{display:inline-block;background:var(--g1-red);color:#fff;padding:13px 26px;text-decoration:none;font-weight:900;letter-spacing:1px;text-transform:uppercase;font-size:13px;margin-top:10px}
+.idx-footer .idx-cta-btn:hover{background:var(--g1-red-h)}
+@media(max-width:900px){.idx-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.idx-section{padding:24px 16px}.idx-header h2{font-size:20px}.idx-grid{grid-template-columns:1fr 1fr;gap:10px}.idx-card{padding:12px;min-height:110px}.idx-card .ic-n{font-size:18px}}
+
+/* MOBILE */
+@media(max-width:900px){
+.portal-main{grid-template-columns:1fr;gap:16px;padding:16px}
+.filters{position:static;max-height:none}
+.grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.g1-topbar{padding:5px 12px;font-size:10px}
+.g1-header-main{padding:10px 14px}.g1-logo{font-size:28px}.g1-section-tag{font-size:12px;margin-left:10px;padding-left:10px}
+.g1-breadcrumb{padding:7px 14px;font-size:11px}
+.portal-hero{padding:22px 16px}.portal-hero h1{font-size:24px}.portal-hero .sub{font-size:14px}
+.modal-card .mb-specs{grid-template-columns:repeat(2,1fr)}
+.modal-img{height:240px}
+.cta-banner h3{font-size:18px}
+}
+
+/* Mobile filter toggle */
+.filter-toggle{display:none;background:var(--g1-black);color:#fff;border:none;padding:12px;width:100%;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit;margin-bottom:12px}
+@media(max-width:900px){
+.filter-toggle{display:block}
+.filters{display:none}
+.filters.show{display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="g1-topbar"><div>Edição Digital — 19 de maio de 2026</div><div class="right"><a href="result.html">Diagnóstico</a><a href="#">Newsletter</a></div></div>
+<div class="g1-header-main"><div class="g1-logo">P1</div><div class="g1-section-tag">Portal de Imóveis Miami</div><div class="g1-header-right"><span>IMÓVEIS</span><span>•</span><span>MIAMI</span></div></div>
+<div class="g1-breadcrumb"><a href="#">P1</a> &rsaquo; <a href="#">Patrimônio Atlântico</a> &rsaquo; Portal de Imóveis Miami</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <span class="stxt">Encontrou algo? Fale com o corretor especialista:</span>
+  <a href="https://wa.me/13059048054" class="sbtn" target="_blank">WhatsApp →</a>
+</div>
+
+<!-- HERO -->
+<div class="portal-hero">
+  <div class="portal-hero-inner">
+    <span class="kicker">Estoque ativo · Maio 2026</span>
+    <h1>Imóveis luxury Miami disponíveis pra comprador brasileiro</h1>
+    <p class="sub">Curadoria atualizada de unidades em estoque ativo nos 6 edifícios da comunidade brasileira de Miami. Filtros por bairro, faixa de preço, quartos e regra de short-term rental. <strong>Todos os contatos vão direto pro corretor parceiro credenciado em Miami-Dade.</strong></p>
+    <div class="stats">
+      <span><strong id="totalCount">30</strong> imóveis no portal</span>
+      <span><strong id="filteredCount">30</strong> exibidos</span>
+      <span>Última atualização: <strong>19/05/2026</strong></span>
+      <span>Fonte: <strong>Curadoria Heritage Signal + miamiresidence.com</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="portal-main">
+
+  <button class="filter-toggle" id="filterToggle">≡ Filtros</button>
+
+  <!-- FILTERS -->
+  <aside class="filters" id="filtersPanel">
+    <h3>Filtros</h3>
+
+    <div class="filter-group">
+      <h4>Bairro</h4>
+      <div class="filter-checks" id="filterHood"></div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Faixa de preço</h4>
+      <div class="filter-radio" id="filterPrice">
+        <label><input type="radio" name="price" value="all" checked><span>Todos</span></label>
+        <label><input type="radio" name="price" value="0-1500000"><span>Até US$ 1,5M</span></label>
+        <label><input type="radio" name="price" value="1500000-2500000"><span>US$ 1,5M a 2,5M</span></label>
+        <label><input type="radio" name="price" value="2500000-4000000"><span>US$ 2,5M a 4M</span></label>
+        <label><input type="radio" name="price" value="4000000-99999999"><span>Acima de US$ 4M</span></label>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Quartos</h4>
+      <div class="filter-radio" id="filterBeds">
+        <label><input type="radio" name="beds" value="all" checked><span>Todos</span></label>
+        <label><input type="radio" name="beds" value="1"><span>1 quarto</span></label>
+        <label><input type="radio" name="beds" value="2"><span>2 quartos</span></label>
+        <label><input type="radio" name="beds" value="3"><span>3 quartos</span></label>
+        <label><input type="radio" name="beds" value="4"><span>4+ quartos</span></label>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Uso</h4>
+      <div class="filter-radio" id="filterUse">
+        <label><input type="radio" name="use" value="all" checked><span>Todos</span></label>
+        <label><input type="radio" name="use" value="short"><span>Short-term rental OK</span></label>
+        <label><input type="radio" name="use" value="long"><span>Long-term ou uso pessoal</span></label>
+      </div>
+    </div>
+
+    <button class="filter-reset" id="filterReset">Limpar filtros</button>
+  </aside>
+
+  <!-- RESULTS -->
+  <main>
+    <div class="results-header">
+      <div class="results-count"><strong id="resultsCount">30</strong> imóveis encontrados</div>
+      <div class="results-sort">
+        <span>Ordenar:</span>
+        <select id="sortSelect">
+          <option value="price-asc">Preço (menor primeiro)</option>
+          <option value="price-desc">Preço (maior primeiro)</option>
+          <option value="sqft-desc">Maior área</option>
+          <option value="featured">Destaque</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="empty" id="emptyState" style="display:none">
+      <h3>Nenhum imóvel com esses filtros</h3>
+      <p>Ajuste os filtros à esquerda ou converse com o corretor — temos acesso a unidades off-market que não aparecem aqui.</p>
+      <button onclick="document.getElementById('filterReset').click()">Limpar filtros</button>
+    </div>
+
+    <!-- MID CTA BANNER -->
+    <div class="cta-banner">
+      <h3>Tem dúvida? O corretor parceiro responde em até 1h.</h3>
+      <p>Especializado em compradores brasileiros · Miami-Dade · Em português</p>
+      <a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Estou%20no%20Portal%20Patrim%C3%B4nio%20Atl%C3%A2ntico%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" id="bannerWhats">Falar pelo WhatsApp →</a>
+      <a href="https://calendly.com/CALENDLY_URL" target="_blank" class="alt" id="bannerCal">Agendar reunião 30min →</a>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+  </main>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-card" id="modalCard">
+    <button class="close" id="modalClose">×</button>
+    <img id="modalImg" class="modal-img" src="" alt="">
+    <div class="modal-body">
+      <span class="mb-tag" id="modalBldg"></span>
+      <h2 id="modalTitle"></h2>
+      <div class="mb-loc" id="modalLoc"></div>
+      <div class="mb-price-row">
+        <div class="mb-price" id="modalPrice"></div>
+        <div class="mb-pps" id="modalPps"></div>
+      </div>
+      <div class="mb-specs">
+        <div><strong id="modalBeds"></strong><em>Quartos</em></div>
+        <div><strong id="modalBaths"></strong><em>Banheiros</em></div>
+        <div><strong id="modalSqft"></strong><em>sqft</em></div>
+        <div><strong id="modalView"></strong><em>Vista</em></div>
+      </div>
+      <p class="mb-desc" id="modalDesc"></p>
+      <div class="mb-features" id="modalFeatures"></div>
+      <div class="mb-actions">
+        <a href="https://calendly.com/CALENDLY_URL" target="_blank" class="btn-cal" id="modalCal">Agendar visita com o corretor →</a>
+        <a href="#" target="_blank" class="btn-whats" id="modalWhats">WhatsApp direto</a>
+      </div>
+      <div class="mb-source">Listagem em parceria informativa com <a href="https://www.miamiresidence.com" target="_blank">miamiresidence.com</a>. Preços, disponibilidade e regras de short-term rental sujeitos a confirmação na reunião com o corretor parceiro. Heritage Signal opera em parceria com corretor credenciado em Miami-Dade.</div>
+    </div>
+  </div>
+</div>
+
+<!-- IDX COMPLETE SECTION -->
+<section class="idx-section">
+  <div class="idx-header">
+    <span class="kicker">Inventário completo · MLS Miami em tempo real</span>
+    <h2>Não encontrou o que procurava? Veja todo o inventário do MLS Miami</h2>
+    <p>Os 30 destaques acima são curadoria editorial Heritage Signal. Pra busca completa por bairro com filtros oficiais do MLS Miami-Dade, acesse o portal do nosso corretor parceiro <strong>Daniella &amp; André Cunha Lima · Realtors®</strong>, com mais de 7.000 imóveis ativos atualizados em tempo real:</p>
+  </div>
+  <div class="idx-grid">
+    <a href="https://www.andrecunhalima.com/for-sale/brickell" target="_blank" class="idx-card">
+      <div><div class="ic-h">Brickell</div><div class="ic-c">33131 · Downtown / urban</div></div>
+      <div><div class="ic-n">1.183</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/for-sale/miami-beach" target="_blank" class="idx-card">
+      <div><div class="ic-h">Miami Beach</div><div class="ic-c">33139 / 33140 · Oceanfront</div></div>
+      <div><div class="ic-n">2.001</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/for-sale/sunny-isles-beach" target="_blank" class="idx-card">
+      <div><div class="ic-h">Sunny Isles</div><div class="ic-c">33160 · Family luxury</div></div>
+      <div><div class="ic-n">1.121</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/for-sale/aventura" target="_blank" class="idx-card">
+      <div><div class="ic-h">Aventura</div><div class="ic-c">33180 · Shopping + condo</div></div>
+      <div><div class="ic-n">1.205</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/for-sale/downtown-miami" target="_blank" class="idx-card">
+      <div><div class="ic-h">Downtown</div><div class="ic-c">33132 · Bay & urban</div></div>
+      <div><div class="ic-n">893</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/for-sale/edgewater" target="_blank" class="idx-card">
+      <div><div class="ic-h">Edgewater</div><div class="ic-c">33137 · Bayfront new</div></div>
+      <div><div class="ic-n">505</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/for-sale/midtown-miami" target="_blank" class="idx-card">
+      <div><div class="ic-h">Midtown</div><div class="ic-c">33127 · Boutique residential</div></div>
+      <div><div class="ic-n">112</div><div class="ic-label">imóveis à venda</div><div class="ic-cta">Ver inventário →</div></div>
+    </a>
+    <a href="https://www.andrecunhalima.com/areas/miami-areas" target="_blank" class="idx-card">
+      <div><div class="ic-h">+ Todos bairros</div><div class="ic-c">Miami-Dade · Broward</div></div>
+      <div><div class="ic-n">7.000+</div><div class="ic-label">total no MLS</div><div class="ic-cta">Explorar tudo →</div></div>
+    </a>
+  </div>
+  <div class="idx-footer">
+    <strong>Atenção:</strong> Você será direcionado pro site oficial do nosso corretor parceiro, onde pode buscar com filtros avançados do MLS. Todos os contatos lá também chegam direto ao Daniella &amp; André — você está no mesmo ecossistema.<br>
+    <a href="https://www.andrecunhalima.com" target="_blank" class="idx-cta-btn">Ir pro site oficial do corretor →</a>
+  </div>
+</section>
+
+<div class="g1-footer">
+  <div class="brand">P1</div>
+  Portal Patrimônio Atlântico · © 2026 Heritage Signal
+  <div class="partner">
+    Corretor parceiro credenciado Miami-Dade:<br>
+    <strong>Daniella &amp; André Cunha Lima · Realtors®</strong><br>
+    <a href="corretor.html">Perfil</a> · <a href="https://www.andrecunhalima.com" target="_blank">Site oficial</a> · <a href="tel:+13059048054">+1 (305) 904-8054</a> · <a href="mailto:andre@andrecunhalima.com">andre@andrecunhalima.com</a>
+  </div>
+  <div style="margin-top:8px;opacity:.7;font-size:11px"><a href="#">Privacidade</a> · <a href="#">Termos</a></div>
+</div>
+
+<script>
+// ============ DATA ============ (substituir por fetch de JSON ou IDX feed depois)
+var PROPERTIES = [
+  // ENTRY $1M-$1.5M (Brickell, short-term OK)
+  {id:'01',bldg:'Aston Martin Residences',hood:'Brickell',zip:'33131',beds:1,baths:1.5,sqft:920,price:1395000,view:'City',img:'img/prop_01_astonmartin_1br.png',short:true,verified:true,featured:true,desc:'Estúdio premium com vista parcial do skyline Brickell. Acabamentos curados pela Aston Martin, garage de coleção, concierge premium. Edifício recém-entregue em 2023.',feat:['Garage premium','Concierge 24h','Spa & gym','Pool deck','Pet-friendly']},
+  {id:'02',bldg:'1010 Brickell',hood:'Brickell',zip:'33131',beds:2,baths:2,sqft:1200,price:1150000,view:'Bay partial',img:'img/prop_02_brickellflatiron.png',short:true,offMarket:true,featured:false,desc:'Apartamento 2 quartos com vista parcial Biscayne Bay. Off-market, vendedor motivado. Edifício com bowling, kids zone, pool deck.',feat:['Bowling lounge','Kids zone','Pool deck','Gym','Spa','Cinema']},
+  {id:'03',bldg:'Brickell Flatiron',hood:'Brickell',zip:'33131',beds:2,baths:2,sqft:1380,price:1250000,view:'City',img:'img/prop_03_1010brickell.png',short:true,verified:true,desc:'Apartamento 2 quartos no icônico Brickell Flatiron. Spa premium, observatório no 64º andar, pool deck panorâmico.',feat:['Observatório 64º','Spa premium','Pool deck','Concierge','Gym 2 andares']},
+  {id:'04',bldg:'Aston Martin Residences',hood:'Brickell',zip:'33131',beds:2,baths:2.5,sqft:1420,price:1895000,view:'River',img:'img/prop_04_astonmartin_2br.png',short:true,verified:true,featured:true,desc:'Apartamento 2 quartos premium com vista pra Miami River e Biscayne Bay. Acabamentos Aston Martin signature: madeira nobre, mármores selecionados.',feat:['Aston Martin design','River view','Sky lounge','Pool deck','Wine room','Concierge']},
+  {id:'05',bldg:'Echo Brickell',hood:'Brickell',zip:'33131',beds:2,baths:2.5,sqft:1450,price:1490000,view:'Bay',img:'img/prop_05_continuum.png',short:true,desc:'Vista para baía em Brickell, edifício boutique com pool a 50 andares. Permite short-term rental via app proprietário.',feat:['Sky pool 50º','Concierge premium','Spa','Valet','Pet-friendly']},
+  {id:'06',bldg:'Reach Brickell City Centre',hood:'Brickell',zip:'33131',beds:1,baths:1.5,sqft:960,price:1095000,view:'City',img:'img/prop_03_1010brickell.png',short:true,desc:'Studio + den dentro do mall Brickell City Centre. Conexão direta ao shopping, escritório, restaurantes Saks Fifth Avenue.',feat:['Mall integrado','Saks Fifth Avenue','Sky pool','3 restaurantes premium']},
+
+  // MID $1.5M-$3M
+  {id:'07',bldg:'Continuum South Beach',hood:'South Beach',zip:'33139',beds:2,baths:2.5,sqft:1750,price:2490000,view:'Ocean',img:'img/prop_05_continuum.png',verified:true,featured:true,desc:'Apartamento oceanfront na South Beach. 12 acres privados, 3 piscinas, beach club exclusivo, tennis academy.',feat:['Beach club privado','3 pools','Tennis academy','Spa Continuum','Concierge premium']},
+  {id:'08',bldg:'One Thousand Museum',hood:'Brickell',zip:'33131',beds:2,baths:2.5,sqft:1650,price:2690000,view:'Bay & City',img:'img/prop_06_onethousand.png',verified:true,featured:true,desc:'Projeto Zaha Hadid, arquitetura exoesqueleto orgânica. Helipad privado, aquatic center, salão Vegas-style.',feat:['Zaha Hadid design','Helipad privado','Aquatic center','Sky lounge','Spa & gym']},
+  {id:'09',bldg:'St Regis Bal Harbour',hood:'Bal Harbour',zip:'33154',beds:2,baths:2.5,sqft:1890,price:2950000,view:'Ocean',img:'img/prop_07_stregis_2br.png',verified:true,desc:'Apartamento oceanfront 2 quartos no St Regis. Hotel service integrado, butler 24/7, spa Remède.',feat:['Hotel service 5★','Butler 24/7','Spa Remède','Beach service','3 restaurantes Bal Harbour Shops']},
+  {id:'10',bldg:'Ritz Carlton Bal Harbour',hood:'Bal Harbour',zip:'33154',beds:2,baths:2.5,sqft:1650,price:1985000,view:'Ocean partial',img:'img/prop_08_ritz.png',verified:true,desc:'Apartamento 2 quartos em Bal Harbour com serviço Ritz Carlton. Acesso direto à praia, restaurante Artisan Beach House.',feat:['Ritz service','Direct beach','Artisan restaurant','Spa','Kids program']},
+  {id:'11',bldg:'Continuum South Beach',hood:'South Beach',zip:'33139',beds:3,baths:3.5,sqft:2150,price:2890000,view:'Ocean',img:'img/prop_05_continuum.png',verified:true,desc:'3 quartos oceanfront, family-friendly, andar alto. Closet walk-in, varanda wraparound 40 metros.',feat:['Andar alto','Wraparound terrace','Family-friendly','Beach club','Tennis academy']},
+  {id:'12',bldg:'Murano Grande',hood:'South Beach',zip:'33139',beds:2,baths:2.5,sqft:1820,price:1750000,view:'Ocean',img:'img/prop_07_stregis_2br.png',short:true,desc:'Apartamento Murano Grande em South Pointe, oceanfront. Permite short-term rental. Pool deck premium, spa.',feat:['Short-term OK','Pool deck','Spa','Direct beach access','Concierge']},
+  {id:'13',bldg:'Setai Miami Beach',hood:'South Beach',zip:'33139',beds:2,baths:2.5,sqft:1680,price:2390000,view:'Ocean',img:'img/prop_07_stregis_2br.png',verified:true,desc:'Apartamento no Setai, propriedade hoteleira premiada. 3 piscinas em níveis diferentes, spa asiático.',feat:['Setai service','3 pools níveis','Spa asiático','Restaurante Jaya','Beach club']},
+
+  // PREMIUM $3M-$5M
+  {id:'14',bldg:'Oceana Bal Harbour',hood:'Bal Harbour',zip:'33154',beds:3,baths:3.5,sqft:2250,price:3890000,view:'Ocean direct',img:'img/prop_09_oceana.png',offMarket:true,desc:'3 quartos oceanfront off-market. Esculturas Jeff Koons no lobby. Beach club privado, restaurante Ottimo signature.',feat:['Jeff Koons lobby','Beach club privado','Restaurante Ottimo','Spa','Tennis']},
+  {id:'15',bldg:'Estates at Acqualina',hood:'Sunny Isles',zip:'33160',beds:3,baths:3.5,sqft:2800,price:4950000,view:'Ocean panoramic',img:'img/prop_10_acqualina.png',verified:true,featured:true,desc:'Penthouse-style 3 quartos no Estates at Acqualina. Esports lounge, Wall Street trading room, salão privado.',feat:['Esports lounge','Trading room','Salão privado','Spa Acqualina','Beach service']},
+  {id:'16',bldg:'Faena House',hood:'Mid-Beach',zip:'33140',beds:2,baths:2.5,sqft:2100,price:4200000,view:'Ocean',img:'img/prop_11_faena.png',verified:true,featured:true,desc:'Boutique 47-unidades por Foster + Partners. Faena Hotel & Spa adjacente. Theater Faena na esquina.',feat:['Foster + Partners','Faena Theater','Spa Tierra Santa','Beach club Faena','Restaurantes assinados']},
+  {id:'17',bldg:'Apogee South Beach',hood:'South Beach',zip:'33139',beds:3,baths:3.5,sqft:3100,price:4750000,view:'Ocean + Bay',img:'img/prop_12_stregis_3br.png',verified:true,desc:'Half-floor 3 quartos com vista ocean + bay. 67 unidades totais no edifício, máxima privacidade.',feat:['Half-floor','Dual view','67 unidades total','Pool ocean view','Concierge premium']},
+  {id:'18',bldg:'Porsche Design Tower',hood:'Sunny Isles',zip:'33160',beds:3,baths:3.5,sqft:2950,price:4480000,view:'Ocean direct',img:'img/prop_04_astonmartin_2br.png',short:true,desc:'Garage privada no apartamento (carro sobe junto via "Dezervator"). Sky garage exclusivo. Permite short-term.',feat:['Dezervator car elevator','In-unit garage','Sky garage','Pool deck','Sports lounge']},
+  {id:'19',bldg:'Ritz Carlton Bal Harbour',hood:'Bal Harbour',zip:'33154',beds:3,baths:3.5,sqft:2680,price:3650000,view:'Ocean',img:'img/prop_08_ritz.png',verified:true,desc:'3 quartos oceanfront com serviço Ritz Carlton. Família ideal. Próximo a Cushman School (8 min).',feat:['Ritz service','Family layout','Cushman 8min','Beach service','Spa']},
+
+  // ULTRA $5M+
+  {id:'20',bldg:'St Regis Bal Harbour',hood:'Bal Harbour',zip:'33154',beds:3,baths:3.5,sqft:2650,price:5800000,view:'Ocean direct',img:'img/prop_12_stregis_3br.png',verified:true,featured:true,desc:'3 quartos oceanfront premium no St Regis. Penthouse-level. Terraço wraparound de 60 metros.',feat:['Penthouse-level','Terraço 60m','Butler 24/7','Spa Remède','Beach service premium']},
+  {id:'21',bldg:'Faena House',hood:'Mid-Beach',zip:'33140',beds:3,baths:3.5,sqft:3450,price:6900000,view:'Ocean panoramic',img:'img/prop_11_faena.png',verified:true,desc:'Half-floor 3 quartos no Faena House. Andar alto, terraço panorâmico. 1 das 47 unidades totais.',feat:['Half-floor','Faena Theater','Spa Tierra Santa','Beach club','Foster + Partners']},
+  {id:'22',bldg:'Estates at Acqualina',hood:'Sunny Isles',zip:'33160',beds:4,baths:4.5,sqft:3800,price:7250000,view:'Ocean panoramic',img:'img/prop_10_acqualina.png',verified:true,desc:'4 quartos family flagship. Esports lounge, Wall Street trading room, salão privado, spa Acqualina premium.',feat:['Esports lounge','Trading room','4 quartos family','Spa premium','Beach service']},
+  {id:'23',bldg:'One Thousand Museum',hood:'Brickell',zip:'33131',beds:3,baths:4.5,sqft:3700,price:7480000,view:'Bay & ocean',img:'img/prop_06_onethousand.png',verified:true,featured:true,desc:'Penthouse-level 3 quartos Zaha Hadid. Helipad privado, aquatic center, vista 270° Biscayne Bay e oceano.',feat:['Helipad','Zaha Hadid signature','Vista 270°','Aquatic center','Sky lounge']},
+  {id:'24',bldg:'Apogee South Beach',hood:'South Beach',zip:'33139',beds:4,baths:4.5,sqft:4100,price:8950000,view:'Ocean + Bay',img:'img/prop_12_stregis_3br.png',verified:true,desc:'Penthouse 4 quartos oceanfront em South Pointe. Vista dupla ocean + bay, terraço wraparound 100m, hot tub privado.',feat:['Penthouse','100m terrace','Hot tub privado','Dual view','67 unidades total']},
+
+  // LIFESTYLE / FAMILY (additional)
+  {id:'25',bldg:'Grove at Grand Bay',hood:'Coconut Grove',zip:'33133',beds:3,baths:3.5,sqft:2400,price:3290000,view:'Bay',img:'img/prop_05_continuum.png',desc:'Tower torção arquitetônica por Bjarke Ingels. Coconut Grove tranquilo, próximo às escolas Cushman/Ransom Everglades.',feat:['Bjarke Ingels design','Cushman/Ransom 5min','Park view','Tennis','Pool deck']},
+  {id:'26',bldg:'L\'Atelier Miami Beach',hood:'Mid-Beach',zip:'33140',beds:3,baths:3.5,sqft:2350,price:3650000,view:'Ocean',img:'img/prop_05_continuum.png',desc:'Boutique 18-unidades oceanfront no Mid-Beach. Máxima privacidade. Closet walk-in premium em cada quarto.',feat:['Boutique 18 unidades','Máxima privacidade','Walk-in closets','Pool deck','Concierge']},
+  {id:'27',bldg:'Park Grove',hood:'Coconut Grove',zip:'33133',beds:4,baths:4.5,sqft:3200,price:4890000,view:'Bay',img:'img/prop_09_oceana.png',desc:'4 quartos family no Coconut Grove, 5 min de Cushman e Ransom. Designed by Rem Koolhaas + Meyer Davis.',feat:['Family flagship','Rem Koolhaas','5min escolas top','Lush gardens','Spa']},
+  {id:'28',bldg:'Murano at Portofino',hood:'South Beach',zip:'33139',beds:3,baths:3.5,sqft:2480,price:2850000,view:'Marina',img:'img/prop_07_stregis_2br.png',desc:'3 quartos marina view em South Pointe. Marina privada adjacente, walking distance pro Joe\'s Stone Crab.',feat:['Marina view','Yacht slips','Joe\'s Stone Crab adjacente','Pool deck','Spa']},
+
+  // VISTO-FOCUSED (EB-5 / E-2 compatibles, $800K-$1.3M range)
+  {id:'29',bldg:'Brickell House',hood:'Brickell',zip:'33131',beds:1,baths:1.5,sqft:880,price:895000,view:'City',img:'img/prop_03_1010brickell.png',short:true,desc:'Studio + den compatível com investimento EB-5 TEA mínimo ($800K). Edifício pet-friendly, robotic parking.',feat:['EB-5 compatible','Robotic parking','Pet-friendly','Sky pool','Gym']},
+  {id:'30',bldg:'SLS Lux Brickell',hood:'Brickell',zip:'33131',beds:2,baths:2,sqft:1320,price:1340000,view:'River',img:'img/prop_01_astonmartin_1br.png',short:true,desc:'2 quartos no SLS Lux com vista pra Miami River. Permite short-term rental via app proprietário. Pool deck Hyde Beach.',feat:['SLS service','Hyde Beach pool','River view','Spa','Concierge premium']}
+];
+
+// ============ STATE ============
+var state={
+  filters:{hoods:[],price:'all',beds:'all',use:'all'},
+  sort:'price-asc',
+  page:1,
+  perPage:8,
+  favs:[]
+};
+var filtered=PROPERTIES.slice();
+
+// ============ HELPERS ============
+function fmtP(p){return 'US$ '+p.toLocaleString('pt-BR').replace(/,/g,'.')}
+function uniqueHoods(){
+  var s={};PROPERTIES.forEach(function(p){s[p.hood]=(s[p.hood]||0)+1});
+  return Object.keys(s).sort().map(function(h){return {name:h,count:s[h]}});
+}
+
+// ============ FILTERS UI ============
+function renderHoodFilters(){
+  var html='';uniqueHoods().forEach(function(h){
+    html+='<label><input type="checkbox" value="'+h.name+'"><span>'+h.name+'</span><span class="count">'+h.count+'</span></label>';
+  });
+  document.getElementById('filterHood').innerHTML=html;
+  document.querySelectorAll('#filterHood input').forEach(function(c){
+    c.addEventListener('change',function(){
+      state.filters.hoods=Array.from(document.querySelectorAll('#filterHood input:checked')).map(function(i){return i.value});
+      state.page=1;applyFilters();
+    });
+  });
+}
+function setupFilters(){
+  document.querySelectorAll('#filterPrice input').forEach(function(r){r.addEventListener('change',function(){state.filters.price=this.value;state.page=1;applyFilters()})});
+  document.querySelectorAll('#filterBeds input').forEach(function(r){r.addEventListener('change',function(){state.filters.beds=this.value;state.page=1;applyFilters()})});
+  document.querySelectorAll('#filterUse input').forEach(function(r){r.addEventListener('change',function(){state.filters.use=this.value;state.page=1;applyFilters()})});
+  document.getElementById('sortSelect').addEventListener('change',function(){state.sort=this.value;applyFilters()});
+  document.getElementById('filterReset').addEventListener('click',function(){
+    state.filters={hoods:[],price:'all',beds:'all',use:'all'};
+    state.page=1;
+    document.querySelectorAll('#filterHood input').forEach(function(c){c.checked=false});
+    document.querySelector('#filterPrice input[value="all"]').checked=true;
+    document.querySelector('#filterBeds input[value="all"]').checked=true;
+    document.querySelector('#filterUse input[value="all"]').checked=true;
+    applyFilters();
+  });
+}
+
+// ============ APPLY FILTERS ============
+function applyFilters(){
+  filtered=PROPERTIES.filter(function(p){
+    if(state.filters.hoods.length>0 && state.filters.hoods.indexOf(p.hood)===-1)return false;
+    if(state.filters.price!=='all'){
+      var r=state.filters.price.split('-');
+      if(p.price<parseInt(r[0])||p.price>parseInt(r[1]))return false;
+    }
+    if(state.filters.beds!=='all'){
+      if(state.filters.beds==='4'){if(p.beds<4)return false}
+      else if(p.beds!==parseInt(state.filters.beds))return false;
+    }
+    if(state.filters.use==='short'&&!p.short)return false;
+    if(state.filters.use==='long'&&p.short)return false;
+    return true;
+  });
+  filtered.sort(function(a,b){
+    if(state.sort==='price-asc')return a.price-b.price;
+    if(state.sort==='price-desc')return b.price-a.price;
+    if(state.sort==='sqft-desc')return b.sqft-a.sqft;
+    if(state.sort==='featured')return(b.featured?1:0)-(a.featured?1:0)||a.price-b.price;
+    return 0;
+  });
+  document.getElementById('resultsCount').textContent=filtered.length;
+  document.getElementById('filteredCount').textContent=filtered.length;
+  document.getElementById('totalCount').textContent=PROPERTIES.length;
+  renderGrid();renderPagination();
+  if(window.fbq)fbq('trackCustom','PortalFilter',state.filters);
+}
+
+// ============ RENDER GRID ============
+function renderGrid(){
+  var start=(state.page-1)*state.perPage;
+  var end=start+state.perPage;
+  var pageItems=filtered.slice(start,end);
+  if(pageItems.length===0){
+    document.getElementById('grid').innerHTML='';
+    document.getElementById('emptyState').style.display='block';
+    return;
+  }
+  document.getElementById('emptyState').style.display='none';
+  document.getElementById('grid').innerHTML=pageItems.map(buildCard).join('');
+  // attach
+  document.querySelectorAll('.card').forEach(function(c){
+    var id=c.getAttribute('data-id');
+    c.querySelector('.img-wrap').addEventListener('click',function(){openModal(id)});
+    c.querySelector('.btn-view').addEventListener('click',function(e){e.preventDefault();openModal(id)});
+    var fav=c.querySelector('.fav');
+    fav.addEventListener('click',function(e){e.stopPropagation();toggleFav(id,fav)});
+  });
+}
+function buildCard(p){
+  var badges='';
+  if(p.featured)badges+='<span class="badge featured">★ DESTAQUE</span>';
+  if(p.short)badges+='<span class="badge">SHORT-TERM OK</span>';
+  if(p.offMarket)badges+='<span class="badge off">OFF-MARKET</span>';
+  if(p.verified)badges+='<span class="badge verif">VERIFICADO</span>';
+  var isFav=state.favs.indexOf(p.id)!==-1;
+  var pps=Math.round(p.price/p.sqft);
+  return '<article class="card" data-id="'+p.id+'">'+
+    '<div class="img-wrap"><img src="'+p.img+'" alt="'+p.bldg+'" loading="lazy">'+
+    '<div class="badges">'+badges+'</div>'+
+    '<button class="fav '+(isFav?'active':'')+'" aria-label="Favoritar">'+(isFav?'❤':'♡')+'</button></div>'+
+    '<div class="meta">'+
+      '<div class="bldg">'+p.bldg+'</div>'+
+      '<div class="title">'+p.beds+'BR / '+p.baths+'BA · '+p.sqft.toLocaleString('pt-BR').replace(/,/g,'.')+' sqft</div>'+
+      '<div class="loc">'+p.hood+' · '+p.zip+' · Vista '+p.view+'</div>'+
+      '<div class="specs">'+
+        '<span><strong>'+p.beds+'</strong><em>Quartos</em></span>'+
+        '<span><strong>'+p.baths+'</strong><em>Banheiros</em></span>'+
+        '<span><strong>'+p.sqft.toLocaleString('pt-BR').replace(/,/g,'.')+'</strong><em>sqft</em></span>'+
+      '</div>'+
+      '<div class="price">'+fmtP(p.price)+'</div>'+
+      '<div class="pps">≈ US$ '+pps.toLocaleString('pt-BR').replace(/,/g,'.')+'/sqft</div>'+
+      '<div class="actions">'+
+        '<a href="#" class="btn-secondary btn-view">Ver detalhes</a>'+
+        '<a href="https://wa.me/13059048054?text=Ol%C3%A1!%20Estou%20interessado%20no%20im%C3%B3vel%20'+encodeURIComponent(p.bldg+' '+p.beds+'BR '+p.hood+' '+fmtP(p.price))+'" class="btn-primary" target="_blank">Falar com corretor</a>'+
+      '</div>'+
+    '</div></article>';
+}
+function toggleFav(id,btn){
+  var idx=state.favs.indexOf(id);
+  if(idx===-1){state.favs.push(id);btn.classList.add('active');btn.innerHTML='❤';if(window.fbq)fbq('trackCustom','PortalFav',{id:id})}
+  else{state.favs.splice(idx,1);btn.classList.remove('active');btn.innerHTML='♡'}
+}
+
+// ============ PAGINATION ============
+function renderPagination(){
+  var total=Math.ceil(filtered.length/state.perPage);
+  if(total<=1){document.getElementById('pagination').innerHTML='';return}
+  var html='<button '+(state.page===1?'disabled':'')+' data-p="'+(state.page-1)+'">← Anterior</button>';
+  for(var i=1;i<=total;i++){html+='<button class="'+(i===state.page?'active':'')+'" data-p="'+i+'">'+i+'</button>'}
+  html+='<button '+(state.page===total?'disabled':'')+' data-p="'+(state.page+1)+'">Próxima →</button>';
+  document.getElementById('pagination').innerHTML=html;
+  document.querySelectorAll('.pagination button').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(this.disabled)return;
+      state.page=parseInt(this.getAttribute('data-p'));
+      renderGrid();renderPagination();window.scrollTo({top:document.querySelector('.results-header').offsetTop-20,behavior:'smooth'});
+    });
+  });
+}
+
+// ============ MODAL ============
+function openModal(id){
+  var p=PROPERTIES.filter(function(x){return x.id===id})[0];
+  if(!p)return;
+  document.getElementById('modalImg').src=p.img;
+  document.getElementById('modalImg').alt=p.bldg;
+  document.getElementById('modalBldg').textContent=p.bldg;
+  document.getElementById('modalTitle').textContent=p.beds+'BR / '+p.baths+'BA · '+p.sqft.toLocaleString('pt-BR').replace(/,/g,'.')+' sqft';
+  document.getElementById('modalLoc').textContent=p.hood+' · CEP '+p.zip+' · Vista '+p.view;
+  document.getElementById('modalPrice').textContent=fmtP(p.price);
+  document.getElementById('modalPps').textContent='US$ '+Math.round(p.price/p.sqft).toLocaleString('pt-BR').replace(/,/g,'.')+'/sqft';
+  document.getElementById('modalBeds').textContent=p.beds;
+  document.getElementById('modalBaths').textContent=p.baths;
+  document.getElementById('modalSqft').textContent=p.sqft.toLocaleString('pt-BR').replace(/,/g,'.');
+  document.getElementById('modalView').textContent=p.view;
+  document.getElementById('modalDesc').textContent=p.desc;
+  document.getElementById('modalFeatures').innerHTML=p.feat.map(function(f){return '<span>'+f+'</span>'}).join('');
+  document.getElementById('modalWhats').href='https://wa.me/13059048054?text='+encodeURIComponent('Olá! Quero conversar sobre o imóvel: '+p.bldg+' '+p.beds+'BR no '+p.hood+' — '+fmtP(p.price));
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(window.fbq)fbq('trackCustom','PortalDetailView',{id:id,bldg:p.bldg,price:p.price});
+  if(window.clarity)clarity('event','property_detail_'+id);
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// ============ INIT ============
+document.addEventListener('DOMContentLoaded',function(){
+  renderHoodFilters();
+  setupFilters();
+  applyFilters();
+  document.getElementById('modalClose').addEventListener('click',closeModal);
+  document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+
+  document.getElementById('filterToggle').addEventListener('click',function(){
+    document.getElementById('filtersPanel').classList.toggle('show');
+  });
+
+  // Sticky bar
+  window.addEventListener('scroll',function(){
+    var b=document.getElementById('stickyBar');
+    if(window.scrollY>500)b.classList.add('visible');else b.classList.remove('visible');
+  });
+
+  // Track CTAs
+  document.getElementById('bannerWhats').addEventListener('click',function(){if(window.fbq)fbq('trackCustom','PortalBannerWhats')});
+  document.getElementById('bannerCal').addEventListener('click',function(){if(window.fbq)fbq('trackCustom','PortalBannerCal')});
+
+  // Forward URL params to internal links
+  var qs=window.location.search;
+  if(qs){
+    setTimeout(function(){
+      document.querySelectorAll('a[href]').forEach(function(a){
+        var h=a.getAttribute('href');
+        if(!h||h.indexOf('http')===0||h.indexOf('#')===0||h.indexOf('mailto:')===0)return;
+        a.setAttribute('href',h+(h.indexOf('?')===-1?qs:'&'+qs.substring(1)));
+      });
+    },200);
+  }
+});
+</script>
+
+</body>
+</html>
